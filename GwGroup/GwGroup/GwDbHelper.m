@@ -57,7 +57,6 @@ static GwDbHelper *helper = nil;
 - (void)openDb
 {
     [self copyDbFileDomain];
-    
     int result = sqlite3_open([[self dbFilePath] UTF8String], &_dbObj);
     if (result != SQLITE_OK) {
         NSAssert(0, @"open db fail");
@@ -95,5 +94,11 @@ static GwDbHelper *helper = nil;
 	NSString *documentsDirectory = [paths objectAtIndex:0];
 	NSString *path = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@%@", DB_NAME, DB_EXT]];
 	return path;
+}
+
+- (BOOL)checkDbFile
+{
+    NSFileManager *manger = [NSFileManager defaultManager];
+    return [manger fileExistsAtPath:[self dbFilePath]];
 }
 @end

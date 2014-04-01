@@ -9,5 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface GwUtil : NSObject
+
 + (void)loadWorldId;
+
++ (void)copyDbToCache;
+
 @end

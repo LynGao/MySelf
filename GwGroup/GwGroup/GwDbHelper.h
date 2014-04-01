@@ -31,4 +31,6 @@
  *  拷贝db文件到沙盒
  */
 - (void)copyDbFileDomain;
+
+- (BOOL)checkDbFile;
 @end

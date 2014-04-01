@@ -8,12 +8,17 @@
 
 #import "GwAppDelegate.h"
 
+#import "GwRootViewController.h"
+
+
 @implementation GwAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [GwUtil loadWorldId];
+//    [GwUtil loadWorldId];
+    GwRootViewController *root = [[GwRootViewController alloc] init];
+    self.window.rootViewController = root;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

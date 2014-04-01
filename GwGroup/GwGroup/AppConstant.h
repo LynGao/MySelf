@@ -12,4 +12,10 @@
 #define DB_NAME @"db" 
 #define DB_EXT @".sqlite3"
 
+#if 1
+#define GWLog(s,...)NSLog(@"<%p %@:(%d)> %@",self,[[NSString stringWithUTF8String:__FILE__]lastPathComponent],__LINE__,[NSString stringWithFormat:(s),##__VA_ARGS__])
+#else
+#define GWLog(s,...)
+#endif
+
 #endif
