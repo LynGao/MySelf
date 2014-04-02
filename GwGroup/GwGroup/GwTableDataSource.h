@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^ConfigCellBlock)(id cell,id data);
+typedef void(^ConfigCellBlock)(id cell,id data,NSInteger index);
 
 @interface GwTableDataSource : NSObject<UITableViewDataSource>
 

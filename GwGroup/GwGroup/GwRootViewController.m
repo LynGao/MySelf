@@ -10,11 +10,15 @@
 #import "GwTableDataSource.h"
 #import "GwMainTableViewCell.h"
 
-@interface GwRootViewController ()<UITableViewDelegate>
+#import "GwStateImage.h"
+#import "GwRootTableViewDelegate.h"
+
+@interface GwRootViewController ()
 {
     UITableView *_mainTable;
     
     GwTableDataSource *_dataSouce;
+    GwRootTableViewDelegate *_delegate;
 }
 @end
 
@@ -34,16 +38,20 @@
     [super viewDidLoad];
     GWLog(@"-----");
     _mainTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, CGRectGetHeight(self.view.frame)) style:UITableViewStylePlain];
-    [_mainTable setDelegate:self];
     
+    _delegate = [[GwRootTableViewDelegate alloc] init];
+    [_mainTable setDelegate:_delegate];
+    
+    __weak GwRootViewController *weakSelf = self;
     NSArray *data = @[@"1",@"2",@"3"];
     _dataSouce = [[GwTableDataSource alloc] initWithData:(NSMutableArray *)data
                                              headerTitle:nil
                                                cellClass:@"GwMainTableViewCell"
                                                  identiy:@"MainCell"
-                                             configBlock:^(id cell, id data) {
-                                                 GwMainTableViewCell *cells = (GwMainTableViewCell *)cell;
-                                                 [cells.showTextLabel setText:data];
+                                             configBlock:^(id cell, id data ,NSInteger index) {
+                                                 [weakSelf configCell:cell
+                                                                 data:data
+                                                                index:index];
                                             }];
     [_mainTable setDataSource:_dataSouce];
     [_mainTable setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -54,8 +62,23 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    // Dispose of any
+    that can be recreated.
 }
 
+
+- (void)configCell:(id)cell
+              data:(id)data
+             index:(NSInteger)index
+{
+    GwMainTableViewCell *cells = (GwMainTableViewCell *)cell;
+    if (index == 0) {
+        GwStateImage *stat = [[GwStateImage alloc] initWithFrame:CGRectMake(20, 20, 50, 50) WithStateType:0];
+        [cells.contentView addSubview:stat];
+    }else
+        [cells.showTextLabel setText:data];
+}
+
+#pragma mark -- table delegate
 
 @end

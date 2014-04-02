@@ -38,6 +38,9 @@
 		CC0D36AF18838C1F007798CC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0D36AE18838C1F007798CC /* MobileCoreServices.framework */; };
 		CC0D36B418838C92007798CC /* GwUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0D36B318838C92007798CC /* GwUtil.m */; };
 		CC0D36B818838D91007798CC /* UIViewController+Adapter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0D36B718838D91007798CC /* UIViewController+Adapter.m */; };
+		CC13851F18EBB09800A9FEFB /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = CC13851C18EBB09800A9FEFB /* UIScrollView+SVInfiniteScrolling.m */; };
+		CC13852018EBB09800A9FEFB /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = CC13851E18EBB09800A9FEFB /* UIScrollView+SVPullToRefresh.m */; };
+		CC13852418EBB0F400A9FEFB /* GwStateImage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC13852318EBB0F400A9FEFB /* GwStateImage.m */; };
 		CC2D24F518C86D3300E7F545 /* 广东.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CC2D24F418C86D3300E7F545 /* 广东.rtf */; };
 		CC2D257918C86E7400E7F545 /* libbaidumapapi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2D254B18C86E7400E7F545 /* libbaidumapapi.a */; };
 		CC2D257A18C86E7400E7F545 /* libbaidumapapi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2D257618C86E7400E7F545 /* libbaidumapapi.a */; };
@@ -51,7 +54,6 @@
 		CC2DB07518EAA77B0099170D /* GwTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2DB07418EAA77B0099170D /* GwTableDataSource.m */; };
 		CC2DB07A18EAB5470099170D /* GwMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2DB07818EAB5470099170D /* GwMainTableViewCell.m */; };
 		CC2DB07B18EAB5470099170D /* GwMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC2DB07918EAB5470099170D /* GwMainTableViewCell.xib */; };
-		CC2DB07E18EAC7290099170D /* GwTableDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2DB07D18EAC7290099170D /* GwTableDelegate.m */; };
 		CC3B0443188E62ED00EBD842 /* Chinaplaces.txt in Resources */ = {isa = PBXBuildFile; fileRef = CC3B0442188E62ED00EBD842 /* Chinaplaces.txt */; };
 		CC3CC6E218C5D7B9001235B2 /* db.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = CC3CC6E118C5D7B9001235B2 /* db.sqlite3 */; };
 		CC3D216A188E714600BE1667 /* GwBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3D2169188E714600BE1667 /* GwBaseModel.m */; };
@@ -59,6 +61,8 @@
 		CC3D2171188F9D7300BE1667 /* GwDbHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3D2170188F9D7300BE1667 /* GwDbHelper.m */; };
 		CC3D218A188FC4D600BE1667 /* GwOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3D2189188FC4D600BE1667 /* GwOperation.m */; };
 		CC3D218D188FC50600BE1667 /* GwCityOp.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3D218C188FC50600BE1667 /* GwCityOp.m */; };
+		CCAA8B2518EBFDFD0030D6E0 /* GwTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAA8B2418EBFDFD0030D6E0 /* GwTableViewDelegate.m */; };
+		CCAA8B2818EBFE200030D6E0 /* GwRootTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAA8B2718EBFE200030D6E0 /* GwRootTableViewDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +125,13 @@
 		CC0D36B518838CBD007798CC /* AppConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConstant.h; sourceTree = "<group>"; };
 		CC0D36B618838D91007798CC /* UIViewController+Adapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Adapter.h"; sourceTree = "<group>"; };
 		CC0D36B718838D91007798CC /* UIViewController+Adapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Adapter.m"; sourceTree = "<group>"; };
+		CC13851A18EBB09800A9FEFB /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
+		CC13851B18EBB09800A9FEFB /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
+		CC13851C18EBB09800A9FEFB /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
+		CC13851D18EBB09800A9FEFB /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
+		CC13851E18EBB09800A9FEFB /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
+		CC13852218EBB0F400A9FEFB /* GwStateImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwStateImage.h; sourceTree = "<group>"; };
+		CC13852318EBB0F400A9FEFB /* GwStateImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwStateImage.m; sourceTree = "<group>"; };
 		CC2D24F418C86D3300E7F545 /* 广东.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "广东.rtf"; sourceTree = "<group>"; };
 		CC2D24F818C86E7400E7F545 /* BMapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMapKit.h; sourceTree = "<group>"; };
 		CC2D24F918C86E7400E7F545 /* BMKActionPaopaoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKActionPaopaoView.h; sourceTree = "<group>"; };
@@ -258,8 +269,6 @@
 		CC2DB07718EAB5470099170D /* GwMainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwMainTableViewCell.h; sourceTree = "<group>"; };
 		CC2DB07818EAB5470099170D /* GwMainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwMainTableViewCell.m; sourceTree = "<group>"; };
 		CC2DB07918EAB5470099170D /* GwMainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GwMainTableViewCell.xib; sourceTree = "<group>"; };
-		CC2DB07C18EAC7290099170D /* GwTableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwTableDelegate.h; sourceTree = "<group>"; };
-		CC2DB07D18EAC7290099170D /* GwTableDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwTableDelegate.m; sourceTree = "<group>"; };
 		CC3B0442188E62ED00EBD842 /* Chinaplaces.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Chinaplaces.txt; sourceTree = "<group>"; };
 		CC3CC6E118C5D7B9001235B2 /* db.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite3; sourceTree = "<group>"; };
 		CC3D2168188E714600BE1667 /* GwBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwBaseModel.h; sourceTree = "<group>"; };
@@ -272,6 +281,10 @@
 		CC3D2189188FC4D600BE1667 /* GwOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwOperation.m; sourceTree = "<group>"; };
 		CC3D218B188FC50600BE1667 /* GwCityOp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwCityOp.h; sourceTree = "<group>"; };
 		CC3D218C188FC50600BE1667 /* GwCityOp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwCityOp.m; sourceTree = "<group>"; };
+		CCAA8B2318EBFDFD0030D6E0 /* GwTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwTableViewDelegate.h; sourceTree = "<group>"; };
+		CCAA8B2418EBFDFD0030D6E0 /* GwTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwTableViewDelegate.m; sourceTree = "<group>"; };
+		CCAA8B2618EBFE200030D6E0 /* GwRootTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwRootTableViewDelegate.h; sourceTree = "<group>"; };
+		CCAA8B2718EBFE200030D6E0 /* GwRootTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwRootTableViewDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -406,6 +419,7 @@
 		CC0D368418838B14007798CC /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				CC13851918EBB09800A9FEFB /* SVPullToRefresh */,
 				CC2D24F618C86E7400E7F545 /* BaiduMap_iOSSDK_v2.1.1_Lib */,
 				CC0D368518838B14007798CC /* AFNetworking */,
 			);
@@ -448,6 +462,27 @@
 				CC0D36B718838D91007798CC /* UIViewController+Adapter.m */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		CC13851918EBB09800A9FEFB /* SVPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				CC13851A18EBB09800A9FEFB /* SVPullToRefresh.h */,
+				CC13851B18EBB09800A9FEFB /* UIScrollView+SVInfiniteScrolling.h */,
+				CC13851C18EBB09800A9FEFB /* UIScrollView+SVInfiniteScrolling.m */,
+				CC13851D18EBB09800A9FEFB /* UIScrollView+SVPullToRefresh.h */,
+				CC13851E18EBB09800A9FEFB /* UIScrollView+SVPullToRefresh.m */,
+			);
+			path = SVPullToRefresh;
+			sourceTree = "<group>";
+		};
+		CC13852118EBB0C100A9FEFB /* WeatherState */ = {
+			isa = PBXGroup;
+			children = (
+				CC13852218EBB0F400A9FEFB /* GwStateImage.h */,
+				CC13852318EBB0F400A9FEFB /* GwStateImage.m */,
+			);
+			name = WeatherState;
 			sourceTree = "<group>";
 		};
 		CC2D24F618C86E7400E7F545 /* BaiduMap_iOSSDK_v2.1.1_Lib */ = {
@@ -643,8 +678,8 @@
 			children = (
 				CC2DB07318EAA77B0099170D /* GwTableDataSource.h */,
 				CC2DB07418EAA77B0099170D /* GwTableDataSource.m */,
-				CC2DB07C18EAC7290099170D /* GwTableDelegate.h */,
-				CC2DB07D18EAC7290099170D /* GwTableDelegate.m */,
+				CCAA8B2318EBFDFD0030D6E0 /* GwTableViewDelegate.h */,
+				CCAA8B2418EBFDFD0030D6E0 /* GwTableViewDelegate.m */,
 			);
 			name = TableDataSource;
 			path = ..;
@@ -653,6 +688,8 @@
 		CC2DB07618EAB5280099170D /* Bussiness */ = {
 			isa = PBXGroup;
 			children = (
+				CCAA8B2218EBFD590030D6E0 /* RootTableDelegate */,
+				CC13852118EBB0C100A9FEFB /* WeatherState */,
 				CC2DB07718EAB5470099170D /* GwMainTableViewCell.h */,
 				CC2DB07818EAB5470099170D /* GwMainTableViewCell.m */,
 				CC2DB07918EAB5470099170D /* GwMainTableViewCell.xib */,
@@ -690,6 +727,15 @@
 				CC3D218C188FC50600BE1667 /* GwCityOp.m */,
 			);
 			name = Operation;
+			sourceTree = "<group>";
+		};
+		CCAA8B2218EBFD590030D6E0 /* RootTableDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				CCAA8B2618EBFE200030D6E0 /* GwRootTableViewDelegate.h */,
+				CCAA8B2718EBFE200030D6E0 /* GwRootTableViewDelegate.m */,
+			);
+			name = RootTableDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -800,7 +846,6 @@
 				CC0D369918838B14007798CC /* AFHTTPRequestOperation.m in Sources */,
 				CC0D36B418838C92007798CC /* GwUtil.m in Sources */,
 				CC0D36B818838D91007798CC /* UIViewController+Adapter.m in Sources */,
-				CC2DB07E18EAC7290099170D /* GwTableDelegate.m in Sources */,
 				CC0D368318838A5C007798CC /* GwBaseViewController.m in Sources */,
 				CC0D369A18838B14007798CC /* AFHTTPRequestOperationManager.m in Sources */,
 				CC0D369C18838B14007798CC /* AFNetworkReachabilityManager.m in Sources */,
@@ -816,9 +861,14 @@
 				CC0D369B18838B14007798CC /* AFHTTPSessionManager.m in Sources */,
 				CC0D369F18838B14007798CC /* AFURLRequestSerialization.m in Sources */,
 				CC0D36A118838B14007798CC /* AFURLSessionManager.m in Sources */,
+				CC13851F18EBB09800A9FEFB /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				CC0D366318838A02007798CC /* GwAppDelegate.m in Sources */,
 				CC0D365F18838A02007798CC /* main.m in Sources */,
 				CC3D218A188FC4D600BE1667 /* GwOperation.m in Sources */,
+				CCAA8B2818EBFE200030D6E0 /* GwRootTableViewDelegate.m in Sources */,
+				CCAA8B2518EBFDFD0030D6E0 /* GwTableViewDelegate.m in Sources */,
+				CC13852018EBB09800A9FEFB /* UIScrollView+SVPullToRefresh.m in Sources */,
+				CC13852418EBB0F400A9FEFB /* GwStateImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

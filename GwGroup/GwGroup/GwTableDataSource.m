@@ -64,7 +64,7 @@
         }
     }
     
-    self.confiCell(cell,_dataItemArray[indexPath.row]);
+    self.confiCell(cell,_dataItemArray[indexPath.row],indexPath.row);
     return cell;
 }
 
