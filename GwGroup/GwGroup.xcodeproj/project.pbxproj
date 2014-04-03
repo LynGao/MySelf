@@ -49,11 +49,8 @@
 		CC2D257E18C86EFB00E7F545 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2D257D18C86EFB00E7F545 /* OpenGLES.framework */; };
 		CC2D258018C86F1300E7F545 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2D257F18C86F1300E7F545 /* CoreLocation.framework */; };
 		CC2D258418C86F8700E7F545 /* GwBaiduMapHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2D258318C86F8700E7F545 /* GwBaiduMapHelper.m */; };
-		CC2DB06F18EA8F850099170D /* GwRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2DB06E18EA8F850099170D /* GwRootViewController.m */; };
-		CC2DB07118EAA3A20099170D /* GwRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC2DB07018EAA3A20099170D /* GwRootViewController.xib */; };
 		CC2DB07518EAA77B0099170D /* GwTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2DB07418EAA77B0099170D /* GwTableDataSource.m */; };
 		CC2DB07A18EAB5470099170D /* GwMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2DB07818EAB5470099170D /* GwMainTableViewCell.m */; };
-		CC2DB07B18EAB5470099170D /* GwMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC2DB07918EAB5470099170D /* GwMainTableViewCell.xib */; };
 		CC3B0443188E62ED00EBD842 /* Chinaplaces.txt in Resources */ = {isa = PBXBuildFile; fileRef = CC3B0442188E62ED00EBD842 /* Chinaplaces.txt */; };
 		CC3CC6E218C5D7B9001235B2 /* db.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = CC3CC6E118C5D7B9001235B2 /* db.sqlite3 */; };
 		CC3D216A188E714600BE1667 /* GwBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3D2169188E714600BE1667 /* GwBaseModel.m */; };
@@ -61,8 +58,12 @@
 		CC3D2171188F9D7300BE1667 /* GwDbHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3D2170188F9D7300BE1667 /* GwDbHelper.m */; };
 		CC3D218A188FC4D600BE1667 /* GwOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3D2189188FC4D600BE1667 /* GwOperation.m */; };
 		CC3D218D188FC50600BE1667 /* GwCityOp.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3D218C188FC50600BE1667 /* GwCityOp.m */; };
+		CC46ECC718ED0722008DA113 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = CC46ECC418ED0722008DA113 /* UIImage+ImageEffects.m */; };
+		CC46ECC818ED0722008DA113 /* UIImageView+LBBlurredImage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC46ECC618ED0722008DA113 /* UIImageView+LBBlurredImage.m */; };
+		CC46ECCD18ED4323008DA113 /* GwRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC46ECCB18ED4323008DA113 /* GwRootViewController.m */; };
+		CC46ECCE18ED4323008DA113 /* GwRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC46ECCC18ED4323008DA113 /* GwRootViewController.xib */; };
+		CC46ECD218ED681E008DA113 /* GwMainCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC46ECD118ED681E008DA113 /* GwMainCellModel.m */; };
 		CCAA8B2518EBFDFD0030D6E0 /* GwTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAA8B2418EBFDFD0030D6E0 /* GwTableViewDelegate.m */; };
-		CCAA8B2818EBFE200030D6E0 /* GwRootTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAA8B2718EBFE200030D6E0 /* GwRootTableViewDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -261,14 +262,10 @@
 		CC2D257F18C86F1300E7F545 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CC2D258218C86F8700E7F545 /* GwBaiduMapHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwBaiduMapHelper.h; sourceTree = "<group>"; };
 		CC2D258318C86F8700E7F545 /* GwBaiduMapHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwBaiduMapHelper.m; sourceTree = "<group>"; };
-		CC2DB06D18EA8F850099170D /* GwRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwRootViewController.h; sourceTree = "<group>"; };
-		CC2DB06E18EA8F850099170D /* GwRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwRootViewController.m; sourceTree = "<group>"; };
-		CC2DB07018EAA3A20099170D /* GwRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GwRootViewController.xib; sourceTree = "<group>"; };
 		CC2DB07318EAA77B0099170D /* GwTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwTableDataSource.h; sourceTree = "<group>"; };
 		CC2DB07418EAA77B0099170D /* GwTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwTableDataSource.m; sourceTree = "<group>"; };
 		CC2DB07718EAB5470099170D /* GwMainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwMainTableViewCell.h; sourceTree = "<group>"; };
 		CC2DB07818EAB5470099170D /* GwMainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwMainTableViewCell.m; sourceTree = "<group>"; };
-		CC2DB07918EAB5470099170D /* GwMainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GwMainTableViewCell.xib; sourceTree = "<group>"; };
 		CC3B0442188E62ED00EBD842 /* Chinaplaces.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Chinaplaces.txt; sourceTree = "<group>"; };
 		CC3CC6E118C5D7B9001235B2 /* db.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite3; sourceTree = "<group>"; };
 		CC3D2168188E714600BE1667 /* GwBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwBaseModel.h; sourceTree = "<group>"; };
@@ -281,10 +278,17 @@
 		CC3D2189188FC4D600BE1667 /* GwOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwOperation.m; sourceTree = "<group>"; };
 		CC3D218B188FC50600BE1667 /* GwCityOp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwCityOp.h; sourceTree = "<group>"; };
 		CC3D218C188FC50600BE1667 /* GwCityOp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwCityOp.m; sourceTree = "<group>"; };
+		CC46ECC318ED0722008DA113 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		CC46ECC418ED0722008DA113 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		CC46ECC518ED0722008DA113 /* UIImageView+LBBlurredImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LBBlurredImage.h"; sourceTree = "<group>"; };
+		CC46ECC618ED0722008DA113 /* UIImageView+LBBlurredImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LBBlurredImage.m"; sourceTree = "<group>"; };
+		CC46ECCA18ED4323008DA113 /* GwRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwRootViewController.h; sourceTree = "<group>"; };
+		CC46ECCB18ED4323008DA113 /* GwRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwRootViewController.m; sourceTree = "<group>"; };
+		CC46ECCC18ED4323008DA113 /* GwRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GwRootViewController.xib; sourceTree = "<group>"; };
+		CC46ECD018ED681E008DA113 /* GwMainCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwMainCellModel.h; sourceTree = "<group>"; };
+		CC46ECD118ED681E008DA113 /* GwMainCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwMainCellModel.m; sourceTree = "<group>"; };
 		CCAA8B2318EBFDFD0030D6E0 /* GwTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwTableViewDelegate.h; sourceTree = "<group>"; };
 		CCAA8B2418EBFDFD0030D6E0 /* GwTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwTableViewDelegate.m; sourceTree = "<group>"; };
-		CCAA8B2618EBFE200030D6E0 /* GwRootTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwRootTableViewDelegate.h; sourceTree = "<group>"; };
-		CCAA8B2718EBFE200030D6E0 /* GwRootTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwRootTableViewDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -368,9 +372,9 @@
 				CC0D36B518838CBD007798CC /* AppConstant.h */,
 				CC0D366118838A02007798CC /* GwAppDelegate.h */,
 				CC0D366218838A02007798CC /* GwAppDelegate.m */,
-				CC2DB06D18EA8F850099170D /* GwRootViewController.h */,
-				CC2DB06E18EA8F850099170D /* GwRootViewController.m */,
-				CC2DB07018EAA3A20099170D /* GwRootViewController.xib */,
+				CC46ECCA18ED4323008DA113 /* GwRootViewController.h */,
+				CC46ECCB18ED4323008DA113 /* GwRootViewController.m */,
+				CC46ECCC18ED4323008DA113 /* GwRootViewController.xib */,
 				CC2D258118C86F6300E7F545 /* Map */,
 				CC3D216E188E72A500BE1667 /* DbHelper */,
 				CC3D2167188E712400BE1667 /* model */,
@@ -419,6 +423,7 @@
 		CC0D368418838B14007798CC /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				CC46ECC218ED0715008DA113 /* Gansi */,
 				CC13851918EBB09800A9FEFB /* SVPullToRefresh */,
 				CC2D24F618C86E7400E7F545 /* BaiduMap_iOSSDK_v2.1.1_Lib */,
 				CC0D368518838B14007798CC /* AFNetworking */,
@@ -688,11 +693,8 @@
 		CC2DB07618EAB5280099170D /* Bussiness */ = {
 			isa = PBXGroup;
 			children = (
-				CCAA8B2218EBFD590030D6E0 /* RootTableDelegate */,
+				CC46ECC918ED40D3008DA113 /* Main */,
 				CC13852118EBB0C100A9FEFB /* WeatherState */,
-				CC2DB07718EAB5470099170D /* GwMainTableViewCell.h */,
-				CC2DB07818EAB5470099170D /* GwMainTableViewCell.m */,
-				CC2DB07918EAB5470099170D /* GwMainTableViewCell.xib */,
 			);
 			name = Bussiness;
 			sourceTree = "<group>";
@@ -700,6 +702,7 @@
 		CC3D2167188E712400BE1667 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				CC46ECCF18ED6809008DA113 /* MainCellModel */,
 				CC3D2187188FC45C00BE1667 /* Operation */,
 				CC3D2168188E714600BE1667 /* GwBaseModel.h */,
 				CC3D2169188E714600BE1667 /* GwBaseModel.m */,
@@ -729,13 +732,33 @@
 			name = Operation;
 			sourceTree = "<group>";
 		};
-		CCAA8B2218EBFD590030D6E0 /* RootTableDelegate */ = {
+		CC46ECC218ED0715008DA113 /* Gansi */ = {
 			isa = PBXGroup;
 			children = (
-				CCAA8B2618EBFE200030D6E0 /* GwRootTableViewDelegate.h */,
-				CCAA8B2718EBFE200030D6E0 /* GwRootTableViewDelegate.m */,
+				CC46ECC318ED0722008DA113 /* UIImage+ImageEffects.h */,
+				CC46ECC418ED0722008DA113 /* UIImage+ImageEffects.m */,
+				CC46ECC518ED0722008DA113 /* UIImageView+LBBlurredImage.h */,
+				CC46ECC618ED0722008DA113 /* UIImageView+LBBlurredImage.m */,
 			);
-			name = RootTableDelegate;
+			name = Gansi;
+			sourceTree = "<group>";
+		};
+		CC46ECC918ED40D3008DA113 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CC2DB07718EAB5470099170D /* GwMainTableViewCell.h */,
+				CC2DB07818EAB5470099170D /* GwMainTableViewCell.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		CC46ECCF18ED6809008DA113 /* MainCellModel */ = {
+			isa = PBXGroup;
+			children = (
+				CC46ECD018ED681E008DA113 /* GwMainCellModel.h */,
+				CC46ECD118ED681E008DA113 /* GwMainCellModel.m */,
+			);
+			name = MainCellModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -814,10 +837,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC46ECCE18ED4323008DA113 /* GwRootViewController.xib in Resources */,
 				CC2D24F518C86D3300E7F545 /* 广东.rtf in Resources */,
 				CC0D365D18838A02007798CC /* InfoPlist.strings in Resources */,
-				CC2DB07118EAA3A20099170D /* GwRootViewController.xib in Resources */,
-				CC2DB07B18EAB5470099170D /* GwMainTableViewCell.xib in Resources */,
 				CC0D366518838A02007798CC /* Images.xcassets in Resources */,
 				CC2D257B18C86E7400E7F545 /* mapapi.bundle in Resources */,
 				CC2D257C18C86E7400E7F545 /* readme.txt in Resources */,
@@ -841,6 +863,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC46ECD218ED681E008DA113 /* GwMainCellModel.m in Sources */,
 				CC3D216A188E714600BE1667 /* GwBaseModel.m in Sources */,
 				CC2DB07518EAA77B0099170D /* GwTableDataSource.m in Sources */,
 				CC0D369918838B14007798CC /* AFHTTPRequestOperation.m in Sources */,
@@ -849,14 +872,15 @@
 				CC0D368318838A5C007798CC /* GwBaseViewController.m in Sources */,
 				CC0D369A18838B14007798CC /* AFHTTPRequestOperationManager.m in Sources */,
 				CC0D369C18838B14007798CC /* AFNetworkReachabilityManager.m in Sources */,
+				CC46ECCD18ED4323008DA113 /* GwRootViewController.m in Sources */,
 				CC0D36A018838B14007798CC /* AFURLResponseSerialization.m in Sources */,
 				CC3D2171188F9D7300BE1667 /* GwDbHelper.m in Sources */,
 				CC0D369E18838B14007798CC /* AFURLConnectionOperation.m in Sources */,
 				CC2D258418C86F8700E7F545 /* GwBaiduMapHelper.m in Sources */,
 				CC3D216D188E716500BE1667 /* GwCityCode.m in Sources */,
 				CC0D369D18838B14007798CC /* AFSecurityPolicy.m in Sources */,
+				CC46ECC718ED0722008DA113 /* UIImage+ImageEffects.m in Sources */,
 				CC2DB07A18EAB5470099170D /* GwMainTableViewCell.m in Sources */,
-				CC2DB06F18EA8F850099170D /* GwRootViewController.m in Sources */,
 				CC3D218D188FC50600BE1667 /* GwCityOp.m in Sources */,
 				CC0D369B18838B14007798CC /* AFHTTPSessionManager.m in Sources */,
 				CC0D369F18838B14007798CC /* AFURLRequestSerialization.m in Sources */,
@@ -865,8 +889,8 @@
 				CC0D366318838A02007798CC /* GwAppDelegate.m in Sources */,
 				CC0D365F18838A02007798CC /* main.m in Sources */,
 				CC3D218A188FC4D600BE1667 /* GwOperation.m in Sources */,
-				CCAA8B2818EBFE200030D6E0 /* GwRootTableViewDelegate.m in Sources */,
 				CCAA8B2518EBFDFD0030D6E0 /* GwTableViewDelegate.m in Sources */,
+				CC46ECC818ED0722008DA113 /* UIImageView+LBBlurredImage.m in Sources */,
 				CC13852018EBB09800A9FEFB /* UIScrollView+SVPullToRefresh.m in Sources */,
 				CC13852418EBB0F400A9FEFB /* GwStateImage.m in Sources */,
 			);
@@ -988,15 +1012,18 @@
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: reven wu (KANKTAN2CL)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GwGroup/GwGroup-Prefix.pch";
 				INFOPLIST_FILE = "GwGroup/GwGroup-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/gaowenjian/Desktop/work/workplace/Bitch/MySelf/GwGroup/GwGroup/ThirdPart/BaiduMap_iOSSDK_v2.1.1_Lib/libs/Release-iphoneos",
 					"/Users/gaowenjian/Desktop/work/workplace/Bitch/MySelf/GwGroup/GwGroup/ThirdPart/BaiduMap_iOSSDK_v2.1.1_Lib/libs/Release-iphonesimulator",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "90F351A2-AAAA-4DD2-BAD7-BC3FACE1F088";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1010,12 +1037,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GwGroup/GwGroup-Prefix.pch";
 				INFOPLIST_FILE = "GwGroup/GwGroup-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/gaowenjian/Desktop/work/workplace/Bitch/MySelf/GwGroup/GwGroup/ThirdPart/BaiduMap_iOSSDK_v2.1.1_Lib/libs/Release-iphoneos",
 					"/Users/gaowenjian/Desktop/work/workplace/Bitch/MySelf/GwGroup/GwGroup/ThirdPart/BaiduMap_iOSSDK_v2.1.1_Lib/libs/Release-iphonesimulator",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "90F351A2-AAAA-4DD2-BAD7-BC3FACE1F088";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

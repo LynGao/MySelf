@@ -57,10 +57,13 @@
             GWLog(@"_____ reuse ----");
             [tableView registerNib:[UINib nibWithNibName:_cellClassName bundle:nil] forCellReuseIdentifier:self.indentify];
             cell = [[[NSBundle mainBundle] loadNibNamed:_cellClassName owner:nil options:nil] lastObject];
+            [cell setBackgroundColor:[UIColor clearColor]];
     
         }else{
+            GWLog(@"____ norm resue ----");
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                          reuseIdentifier:self.indentify];
+                                          reuseIdentifier:@"normal"];
+            [cell setBackgroundColor:[UIColor clearColor]];
         }
     }
     

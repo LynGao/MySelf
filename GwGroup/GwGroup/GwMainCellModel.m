@@ -1,13 +1,13 @@
 //
-//  GwRootViewController.h
+//  GwMainCellModel.m
 //  GwGroup
 //
 //  Created by gao wenjian on 14-4-3.
 //  Copyright (c) 2014年 gwj. All rights reserved.
 //
 
-#import "GwBaseViewController.h"
+#import "GwMainCellModel.h"
 
-@interface GwRootViewController : GwBaseViewController
+@implementation GwMainCellModel
 
 @end

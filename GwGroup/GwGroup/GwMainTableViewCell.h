@@ -7,8 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GwMainCellModel.h"
+#import "GwStateImage.h"
 
 @interface GwMainTableViewCell : UITableViewCell
-@property (strong, nonatomic) IBOutlet UILabel *showTextLabel;
 
+@property (nonatomic, strong) GwMainCellModel *model;
+@property (nonatomic, strong) UILabel *curStatuLable;
+@property (nonatomic, strong) UILabel *curTempretureLable;
+@property (nonatomic, strong) UILabel *todayLowestLable;
+@property (nonatomic, strong) UILabel *todayHightestLable;
+@property (nonatomic, strong) UIImageView *stateImage;
 @end
