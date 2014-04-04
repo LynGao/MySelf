@@ -31,7 +31,6 @@
 {
     UIImage *image = [UIImage imageNamed:self.imageName];
     [image drawAtPoint:CGPointMake(0, 0)];
-    
 }
 
 

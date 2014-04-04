@@ -18,4 +18,5 @@
 @property (nonatomic, strong) UILabel *todayLowestLable;
 @property (nonatomic, strong) UILabel *todayHightestLable;
 @property (nonatomic, strong) UIImageView *stateImage;
+
 @end

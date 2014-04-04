@@ -63,6 +63,8 @@
 		CC46ECCD18ED4323008DA113 /* GwRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC46ECCB18ED4323008DA113 /* GwRootViewController.m */; };
 		CC46ECCE18ED4323008DA113 /* GwRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC46ECCC18ED4323008DA113 /* GwRootViewController.xib */; };
 		CC46ECD218ED681E008DA113 /* GwMainCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC46ECD118ED681E008DA113 /* GwMainCellModel.m */; };
+		CC4E4DF118EE875F004BD9BC /* GwTempView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4E4DF018EE875F004BD9BC /* GwTempView.m */; };
+		CC4E4DF418EEAC6F004BD9BC /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4E4DF318EEAC6F004BD9BC /* CoreText.framework */; };
 		CCAA8B2518EBFDFD0030D6E0 /* GwTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAA8B2418EBFDFD0030D6E0 /* GwTableViewDelegate.m */; };
 /* End PBXBuildFile section */
 
@@ -287,6 +289,9 @@
 		CC46ECCC18ED4323008DA113 /* GwRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GwRootViewController.xib; sourceTree = "<group>"; };
 		CC46ECD018ED681E008DA113 /* GwMainCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwMainCellModel.h; sourceTree = "<group>"; };
 		CC46ECD118ED681E008DA113 /* GwMainCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwMainCellModel.m; sourceTree = "<group>"; };
+		CC4E4DEF18EE875F004BD9BC /* GwTempView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwTempView.h; sourceTree = "<group>"; };
+		CC4E4DF018EE875F004BD9BC /* GwTempView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwTempView.m; sourceTree = "<group>"; };
+		CC4E4DF318EEAC6F004BD9BC /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		CCAA8B2318EBFDFD0030D6E0 /* GwTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwTableViewDelegate.h; sourceTree = "<group>"; };
 		CCAA8B2418EBFDFD0030D6E0 /* GwTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwTableViewDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -296,6 +301,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC4E4DF418EEAC6F004BD9BC /* CoreText.framework in Frameworks */,
 				CC2D258018C86F1300E7F545 /* CoreLocation.framework in Frameworks */,
 				CC0D36AD18838C03007798CC /* Security.framework in Frameworks */,
 				CC2D257E18C86EFB00E7F545 /* OpenGLES.framework in Frameworks */,
@@ -348,6 +354,7 @@
 		CC0D365118838A01007798CC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CC4E4DF318EEAC6F004BD9BC /* CoreText.framework */,
 				CC2D257F18C86F1300E7F545 /* CoreLocation.framework */,
 				CC2D257D18C86EFB00E7F545 /* OpenGLES.framework */,
 				CC0D36AE18838C1F007798CC /* MobileCoreServices.framework */,
@@ -693,6 +700,7 @@
 		CC2DB07618EAB5280099170D /* Bussiness */ = {
 			isa = PBXGroup;
 			children = (
+				CC4E4DE818EE8681004BD9BC /* TempLabel */,
 				CC46ECC918ED40D3008DA113 /* Main */,
 				CC13852118EBB0C100A9FEFB /* WeatherState */,
 			);
@@ -759,6 +767,15 @@
 				CC46ECD118ED681E008DA113 /* GwMainCellModel.m */,
 			);
 			name = MainCellModel;
+			sourceTree = "<group>";
+		};
+		CC4E4DE818EE8681004BD9BC /* TempLabel */ = {
+			isa = PBXGroup;
+			children = (
+				CC4E4DEF18EE875F004BD9BC /* GwTempView.h */,
+				CC4E4DF018EE875F004BD9BC /* GwTempView.m */,
+			);
+			name = TempLabel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -892,6 +909,7 @@
 				CCAA8B2518EBFDFD0030D6E0 /* GwTableViewDelegate.m in Sources */,
 				CC46ECC818ED0722008DA113 /* UIImageView+LBBlurredImage.m in Sources */,
 				CC13852018EBB09800A9FEFB /* UIScrollView+SVPullToRefresh.m in Sources */,
+				CC4E4DF118EE875F004BD9BC /* GwTempView.m in Sources */,
 				CC13852418EBB0F400A9FEFB /* GwStateImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1034,6 +1052,7 @@
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: iSoftStone Information Technology Co.,Ltd";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GwGroup/GwGroup-Prefix.pch";
 				INFOPLIST_FILE = "GwGroup/GwGroup-Info.plist";
@@ -1044,7 +1063,7 @@
 					"/Users/gaowenjian/Desktop/work/workplace/Bitch/MySelf/GwGroup/GwGroup/ThirdPart/BaiduMap_iOSSDK_v2.1.1_Lib/libs/Release-iphonesimulator",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "90F351A2-AAAA-4DD2-BAD7-BC3FACE1F088";
+				PROVISIONING_PROFILE = "6D8760CF-E28F-4612-8564-EC2BE5043800";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

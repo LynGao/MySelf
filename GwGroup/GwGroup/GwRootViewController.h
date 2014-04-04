@@ -8,6 +8,9 @@
 
 #import "GwBaseViewController.h"
 
+typedef void(^cellConfig)(id data,id cell);
+
 @interface GwRootViewController : GwBaseViewController
 
+@property (nonatomic, strong) cellConfig cellBlock;
 @end
