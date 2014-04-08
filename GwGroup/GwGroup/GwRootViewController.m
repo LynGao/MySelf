@@ -36,6 +36,11 @@
 {
     [super viewDidLoad];
     
+    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 30)];
+    [v setBackgroundColor:[UIColor redColor]];
+    self.navigationController.navigationItem.titleView = v;
+
+    
     _bgImage = [[UIImageView alloc] initWithFrame:self.view.frame];
     [_bgImage setImage:[UIImage imageNamed:@"bg"]];
     [self.view addSubview:_bgImage];
@@ -48,9 +53,6 @@
         model.curTempreture = @"23";
         model.statuImgName = @"weather-clear";
         [cell setModel:model];
-        
-        [cell setNeedsLayout];
-
     };
     
     _mainTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height) style:UITableViewStylePlain];
@@ -123,6 +125,14 @@
         
     }];
 
+}
+
+- (void)getData
+{
+    
+    
+    
+    
 }
 
 @end

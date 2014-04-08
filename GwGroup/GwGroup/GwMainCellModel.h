@@ -16,4 +16,7 @@
 @property (nonatomic, strong) NSString *todayHightestTemp;
 @property (nonatomic, strong) NSString *curStatu;
 @property (nonatomic, strong) NSString *statuImgName;
+
+
+
 @end

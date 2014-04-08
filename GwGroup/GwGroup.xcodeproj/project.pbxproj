@@ -41,6 +41,9 @@
 		CC13851F18EBB09800A9FEFB /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = CC13851C18EBB09800A9FEFB /* UIScrollView+SVInfiniteScrolling.m */; };
 		CC13852018EBB09800A9FEFB /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = CC13851E18EBB09800A9FEFB /* UIScrollView+SVPullToRefresh.m */; };
 		CC13852418EBB0F400A9FEFB /* GwStateImage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC13852318EBB0F400A9FEFB /* GwStateImage.m */; };
+		CC20679C18F3F244009E25E0 /* Jastor.m in Sources */ = {isa = PBXBuildFile; fileRef = CC20679918F3F244009E25E0 /* Jastor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CC20679D18F3F244009E25E0 /* JastorRuntimeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CC20679B18F3F244009E25E0 /* JastorRuntimeHelper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CC2067A118F3FE11009E25E0 /* GwWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2067A018F3FE11009E25E0 /* GwWeather.m */; };
 		CC2D24F518C86D3300E7F545 /* 广东.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CC2D24F418C86D3300E7F545 /* 广东.rtf */; };
 		CC2D257918C86E7400E7F545 /* libbaidumapapi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2D254B18C86E7400E7F545 /* libbaidumapapi.a */; };
 		CC2D257A18C86E7400E7F545 /* libbaidumapapi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2D257618C86E7400E7F545 /* libbaidumapapi.a */; };
@@ -135,6 +138,13 @@
 		CC13851E18EBB09800A9FEFB /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 		CC13852218EBB0F400A9FEFB /* GwStateImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwStateImage.h; sourceTree = "<group>"; };
 		CC13852318EBB0F400A9FEFB /* GwStateImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwStateImage.m; sourceTree = "<group>"; };
+		CC20679718F3F244009E25E0 /* Jastor-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Jastor-Prefix.pch"; sourceTree = "<group>"; };
+		CC20679818F3F244009E25E0 /* Jastor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jastor.h; sourceTree = "<group>"; };
+		CC20679918F3F244009E25E0 /* Jastor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jastor.m; sourceTree = "<group>"; };
+		CC20679A18F3F244009E25E0 /* JastorRuntimeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JastorRuntimeHelper.h; sourceTree = "<group>"; };
+		CC20679B18F3F244009E25E0 /* JastorRuntimeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JastorRuntimeHelper.m; sourceTree = "<group>"; };
+		CC20679F18F3FE11009E25E0 /* GwWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwWeather.h; sourceTree = "<group>"; };
+		CC2067A018F3FE11009E25E0 /* GwWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwWeather.m; sourceTree = "<group>"; };
 		CC2D24F418C86D3300E7F545 /* 广东.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "广东.rtf"; sourceTree = "<group>"; };
 		CC2D24F818C86E7400E7F545 /* BMapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMapKit.h; sourceTree = "<group>"; };
 		CC2D24F918C86E7400E7F545 /* BMKActionPaopaoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKActionPaopaoView.h; sourceTree = "<group>"; };
@@ -430,6 +440,7 @@
 		CC0D368418838B14007798CC /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				CC20679618F3F244009E25E0 /* Jastor */,
 				CC46ECC218ED0715008DA113 /* Gansi */,
 				CC13851918EBB09800A9FEFB /* SVPullToRefresh */,
 				CC2D24F618C86E7400E7F545 /* BaiduMap_iOSSDK_v2.1.1_Lib */,
@@ -495,6 +506,27 @@
 				CC13852318EBB0F400A9FEFB /* GwStateImage.m */,
 			);
 			name = WeatherState;
+			sourceTree = "<group>";
+		};
+		CC20679618F3F244009E25E0 /* Jastor */ = {
+			isa = PBXGroup;
+			children = (
+				CC20679718F3F244009E25E0 /* Jastor-Prefix.pch */,
+				CC20679818F3F244009E25E0 /* Jastor.h */,
+				CC20679918F3F244009E25E0 /* Jastor.m */,
+				CC20679A18F3F244009E25E0 /* JastorRuntimeHelper.h */,
+				CC20679B18F3F244009E25E0 /* JastorRuntimeHelper.m */,
+			);
+			path = Jastor;
+			sourceTree = "<group>";
+		};
+		CC20679E18F3FDF9009E25E0 /* WeatherModel */ = {
+			isa = PBXGroup;
+			children = (
+				CC20679F18F3FE11009E25E0 /* GwWeather.h */,
+				CC2067A018F3FE11009E25E0 /* GwWeather.m */,
+			);
+			name = WeatherModel;
 			sourceTree = "<group>";
 		};
 		CC2D24F618C86E7400E7F545 /* BaiduMap_iOSSDK_v2.1.1_Lib */ = {
@@ -710,6 +742,7 @@
 		CC3D2167188E712400BE1667 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				CC20679E18F3FDF9009E25E0 /* WeatherModel */,
 				CC46ECCF18ED6809008DA113 /* MainCellModel */,
 				CC3D2187188FC45C00BE1667 /* Operation */,
 				CC3D2168188E714600BE1667 /* GwBaseModel.h */,
@@ -896,12 +929,15 @@
 				CC2D258418C86F8700E7F545 /* GwBaiduMapHelper.m in Sources */,
 				CC3D216D188E716500BE1667 /* GwCityCode.m in Sources */,
 				CC0D369D18838B14007798CC /* AFSecurityPolicy.m in Sources */,
+				CC2067A118F3FE11009E25E0 /* GwWeather.m in Sources */,
 				CC46ECC718ED0722008DA113 /* UIImage+ImageEffects.m in Sources */,
 				CC2DB07A18EAB5470099170D /* GwMainTableViewCell.m in Sources */,
 				CC3D218D188FC50600BE1667 /* GwCityOp.m in Sources */,
 				CC0D369B18838B14007798CC /* AFHTTPSessionManager.m in Sources */,
 				CC0D369F18838B14007798CC /* AFURLRequestSerialization.m in Sources */,
+				CC20679D18F3F244009E25E0 /* JastorRuntimeHelper.m in Sources */,
 				CC0D36A118838B14007798CC /* AFURLSessionManager.m in Sources */,
+				CC20679C18F3F244009E25E0 /* Jastor.m in Sources */,
 				CC13851F18EBB09800A9FEFB /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				CC0D366318838A02007798CC /* GwAppDelegate.m in Sources */,
 				CC0D365F18838A02007798CC /* main.m in Sources */,

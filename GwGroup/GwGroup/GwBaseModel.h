@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface GwBaseModel : NSObject
+#import "Jastor.h"
+
+@interface GwBaseModel : Jastor//NSObject
 
 @end
