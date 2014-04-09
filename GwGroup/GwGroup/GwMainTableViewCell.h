@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "GwMainCellModel.h"
 #import "GwStateImage.h"
+#import "GwTempView.h"
 
 @interface GwMainTableViewCell : UITableViewCell
 
@@ -18,5 +19,5 @@
 @property (nonatomic, strong) UILabel *todayLowestLable;
 @property (nonatomic, strong) UILabel *todayHightestLable;
 @property (nonatomic, strong) UIImageView *stateImage;
-
+@property (nonatomic, strong) GwTempView *tempView;
 @end

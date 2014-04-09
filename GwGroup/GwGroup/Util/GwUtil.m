@@ -63,4 +63,31 @@
 {
     [[GwDbHelper dbShareInstant] copyDbFileDomain];
 }
+
++ (NSDictionary *)parameterCityName:(NSString *)cityName
+{
+    NSDictionary *param = @{@"q":cityName,@"cnt":@"7",@"mode":@"json",@"lang":@"zh_cn",@"units":@"metric"};
+    return param;
+}
+
++ (NSDictionary *)parameterCityID:(NSInteger)cityId
+{
+    NSDictionary *param = @{@"id":[NSNumber numberWithInteger:cityId],@"cnt":@"1",@"mode":@"json",@"lang":@"zh_cn",@"units":@"metric"};
+    return param;
+}
+
++ (NSDictionary *)parameterCityCoordinats:(float)lon lat:(float)lat;
+{
+    NSDictionary *param = @{@"lat":[NSNumber numberWithFloat:lat],@"lon":[NSNumber numberWithFloat:lon],@"cnt":@"1",@"mode":@"json",@"lang":@"zh_cn",@"units":@"metric"};
+    return param;
+}
+
++ (void)formatGMT:(NSInteger)gmt
+{
+
+    NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:gmt];
+    
+    NSLog(@"confromTimesp --- %@",confromTimesp);
+}
+
 @end

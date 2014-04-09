@@ -11,14 +11,16 @@
 #import "GwMainTableViewCell.h"
 #import "GwMainCellModel.h"
 
-
+#import "GwWeatherBi.h"
+#import "GwForecastWeatherItem.h"
+#import "GwWeather.h"
 
 @interface GwRootViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     UITableView *_mainTable;
     UIImageView *_bgImage;
 }
-
+@property (nonatomic, strong) NSMutableArray *forecastArray;
 @end
 
 @implementation GwRootViewController
@@ -36,24 +38,13 @@
 {
     [super viewDidLoad];
     
-    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 30)];
-    [v setBackgroundColor:[UIColor redColor]];
-    self.navigationController.navigationItem.titleView = v;
+    [GwUtil formatGMT:1397016000];
 
+    [self configBlock];
     
     _bgImage = [[UIImageView alloc] initWithFrame:self.view.frame];
     [_bgImage setImage:[UIImage imageNamed:@"bg"]];
     [self.view addSubview:_bgImage];
-    
-    self.cellBlock = ^(id data,id cell){
-        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        GwMainCellModel *model = [[GwMainCellModel alloc] init];
-        model.cityName = @"深圳市";
-        model.curStatu = @"多云";
-        model.curTempreture = @"23";
-        model.statuImgName = @"weather-clear";
-        [cell setModel:model];
-    };
     
     _mainTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height) style:UITableViewStylePlain];
     [_mainTable setBackgroundColor:[UIColor clearColor]];
@@ -61,6 +52,10 @@
     [_mainTable setDelegate:self];
     [_mainTable setPagingEnabled:YES];
     [self.view addSubview:_mainTable];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self getForecast];
+    });
     
 }
 
@@ -92,8 +87,13 @@
         if (cell == nil) {
             cell = [[GwMainTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identify];
             [cell setBackgroundColor:[UIColor clearColor]];
+            [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         }
-        self.cellBlock(nil,cell);
+        
+        if (_forecastArray.count > 0) {
+            self.cellBlock(_forecastArray[0],cell);
+        }
+        
         
         return cell;
     }else{
@@ -127,12 +127,50 @@
 
 }
 
-- (void)getData
+/**
+ *  配置blcok
+ */
+- (void)configBlock
 {
-    
-    
-    
-    
+    self.cellBlock = ^(id data,id cell){
+        
+        if ([data isKindOfClass:[GwForecastWeatherItem class]]) {
+            GwForecastWeatherItem *item = (GwForecastWeatherItem *)data;
+            GwWeather *weather = [item.weather objectAtIndex:0];
+            GwTempModel *temp = item.temp;
+            
+            GwMainCellModel *model = [[GwMainCellModel alloc] init];
+            model.cityName = @"深圳市";
+            model.curStatu = weather.description;
+            model.curTempreture = temp.day;
+            model.statuImgName = weather.icon;
+            [cell setModel:model];
+            
+        }else{
+            GwMainCellModel *model = [[GwMainCellModel alloc] init];
+            model.cityName = @"深圳市";
+            //        model.curStatu = @"多云";
+            //        model.curTempreture = @"23";
+            model.statuImgName = @"weather-clear";
+            [cell setModel:model];
+        }
+        
+    };
+
 }
 
+- (void)getForecast
+{
+    GwWeatherBi *bi = [[GwWeatherBi alloc] init];
+    
+    NSString *urlString = @"guangzhou";
+
+    [bi getForcastWeather:^(id callBackData) {
+        NSArray *array = (NSArray *)callBackData;
+        self.forecastArray = [NSMutableArray arrayWithArray:array];
+        [_mainTable reloadData];
+    } fail:^(id errorMsg) {
+        
+    } cityName:urlString];
+}
 @end

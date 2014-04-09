@@ -2,23 +2,16 @@
 //  GwWeather.h
 //  GwGroup
 //
-//  Created by gao wenjian on 14-4-8.
+//  Created by gao wenjian on 14-4-9.
 //  Copyright (c) 2014年 gwj. All rights reserved.
 //
 
-#import "Jastor.h"
+#import "GwBaseModel.h"
 
-@interface GwWeather : Jastor
+@interface GwWeather : GwBaseModel
 
-@property (nonatomic, strong) NSDictionary *coord;
-@property (nonatomic, strong) NSDictionary *sys;
-@property (nonatomic, strong) NSArray *weather;
-@property (nonatomic, strong) NSString *base;
-@property (nonatomic, strong) NSDictionary *main;
-@property (nonatomic, strong) NSDictionary *wind;
-@property (nonatomic, strong) NSDictionary *clouds;
-@property (nonatomic, strong) NSString *dt;
-@property (nonatomic, strong) NSString *_id;
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *cod;
+@property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSString *icon;
+@property (nonatomic, strong) NSString *objectId;//id类型的，需要生命为 string 且命名 必须是 objectId
+@property (nonatomic, strong) NSString *main;
 @end

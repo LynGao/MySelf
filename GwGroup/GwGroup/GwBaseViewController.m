@@ -40,16 +40,4 @@
 }
 
 
-- (void)testAf
-{
-    AFHTTPRequestOperationManager *manger = [AFHTTPRequestOperationManager manager];
-    [manger POST:@""
-      parameters:nil
-         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-       
-         }
-         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-       
-         }];
-}
 @end

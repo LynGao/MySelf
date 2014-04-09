@@ -16,16 +16,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    [GwUtil loadWorldId];
     GwRootViewController *root = [[GwRootViewController alloc] init];
-
-    
-    UITabBarController *ta = [[UITabBarController alloc] init];
-    [ta addChildViewController:root];
-    
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:ta];
-    
-    self.window.rootViewController = nav;//root;
+    self.window.rootViewController = root;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

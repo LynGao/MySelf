@@ -43,7 +43,7 @@
 		CC13852418EBB0F400A9FEFB /* GwStateImage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC13852318EBB0F400A9FEFB /* GwStateImage.m */; };
 		CC20679C18F3F244009E25E0 /* Jastor.m in Sources */ = {isa = PBXBuildFile; fileRef = CC20679918F3F244009E25E0 /* Jastor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CC20679D18F3F244009E25E0 /* JastorRuntimeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CC20679B18F3F244009E25E0 /* JastorRuntimeHelper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		CC2067A118F3FE11009E25E0 /* GwWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2067A018F3FE11009E25E0 /* GwWeather.m */; };
+		CC2067A118F3FE11009E25E0 /* GwForecastWeatherItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2067A018F3FE11009E25E0 /* GwForecastWeatherItem.m */; };
 		CC2D24F518C86D3300E7F545 /* 广东.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CC2D24F418C86D3300E7F545 /* 广东.rtf */; };
 		CC2D257918C86E7400E7F545 /* libbaidumapapi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2D254B18C86E7400E7F545 /* libbaidumapapi.a */; };
 		CC2D257A18C86E7400E7F545 /* libbaidumapapi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2D257618C86E7400E7F545 /* libbaidumapapi.a */; };
@@ -66,6 +66,10 @@
 		CC46ECCD18ED4323008DA113 /* GwRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC46ECCB18ED4323008DA113 /* GwRootViewController.m */; };
 		CC46ECCE18ED4323008DA113 /* GwRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC46ECCC18ED4323008DA113 /* GwRootViewController.xib */; };
 		CC46ECD218ED681E008DA113 /* GwMainCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC46ECD118ED681E008DA113 /* GwMainCellModel.m */; };
+		CC4A3BCD18F4E2CE0044DC77 /* GwWeatherBi.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4A3BCC18F4E2CE0044DC77 /* GwWeatherBi.m */; };
+		CC4A3BD418F4E3920044DC77 /* GwBaseBi.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4A3BD318F4E3920044DC77 /* GwBaseBi.m */; };
+		CC4A3BDA18F532560044DC77 /* GwWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4A3BD918F532560044DC77 /* GwWeather.m */; };
+		CC4A3BDE18F533FB0044DC77 /* GwTempModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4A3BDD18F533FB0044DC77 /* GwTempModel.m */; };
 		CC4E4DF118EE875F004BD9BC /* GwTempView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4E4DF018EE875F004BD9BC /* GwTempView.m */; };
 		CC4E4DF418EEAC6F004BD9BC /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4E4DF318EEAC6F004BD9BC /* CoreText.framework */; };
 		CCAA8B2518EBFDFD0030D6E0 /* GwTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAA8B2418EBFDFD0030D6E0 /* GwTableViewDelegate.m */; };
@@ -129,8 +133,8 @@
 		CC0D36B218838C92007798CC /* GwUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwUtil.h; sourceTree = "<group>"; };
 		CC0D36B318838C92007798CC /* GwUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwUtil.m; sourceTree = "<group>"; };
 		CC0D36B518838CBD007798CC /* AppConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConstant.h; sourceTree = "<group>"; };
-		CC0D36B618838D91007798CC /* UIViewController+Adapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Adapter.h"; sourceTree = "<group>"; };
-		CC0D36B718838D91007798CC /* UIViewController+Adapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Adapter.m"; sourceTree = "<group>"; };
+		CC0D36B618838D91007798CC /* UIViewController+Adapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Adapter.h"; path = "GwGroup/Util/UIViewController+Adapter.h"; sourceTree = "<group>"; };
+		CC0D36B718838D91007798CC /* UIViewController+Adapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Adapter.m"; path = "GwGroup/Util/UIViewController+Adapter.m"; sourceTree = "<group>"; };
 		CC13851A18EBB09800A9FEFB /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
 		CC13851B18EBB09800A9FEFB /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
 		CC13851C18EBB09800A9FEFB /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
@@ -143,8 +147,8 @@
 		CC20679918F3F244009E25E0 /* Jastor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jastor.m; sourceTree = "<group>"; };
 		CC20679A18F3F244009E25E0 /* JastorRuntimeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JastorRuntimeHelper.h; sourceTree = "<group>"; };
 		CC20679B18F3F244009E25E0 /* JastorRuntimeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JastorRuntimeHelper.m; sourceTree = "<group>"; };
-		CC20679F18F3FE11009E25E0 /* GwWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwWeather.h; sourceTree = "<group>"; };
-		CC2067A018F3FE11009E25E0 /* GwWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwWeather.m; sourceTree = "<group>"; };
+		CC20679F18F3FE11009E25E0 /* GwForecastWeatherItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwForecastWeatherItem.h; sourceTree = "<group>"; };
+		CC2067A018F3FE11009E25E0 /* GwForecastWeatherItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwForecastWeatherItem.m; sourceTree = "<group>"; };
 		CC2D24F418C86D3300E7F545 /* 广东.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "广东.rtf"; sourceTree = "<group>"; };
 		CC2D24F818C86E7400E7F545 /* BMapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMapKit.h; sourceTree = "<group>"; };
 		CC2D24F918C86E7400E7F545 /* BMKActionPaopaoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKActionPaopaoView.h; sourceTree = "<group>"; };
@@ -299,6 +303,14 @@
 		CC46ECCC18ED4323008DA113 /* GwRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GwRootViewController.xib; sourceTree = "<group>"; };
 		CC46ECD018ED681E008DA113 /* GwMainCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwMainCellModel.h; sourceTree = "<group>"; };
 		CC46ECD118ED681E008DA113 /* GwMainCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwMainCellModel.m; sourceTree = "<group>"; };
+		CC4A3BCB18F4E2CE0044DC77 /* GwWeatherBi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwWeatherBi.h; sourceTree = "<group>"; };
+		CC4A3BCC18F4E2CE0044DC77 /* GwWeatherBi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwWeatherBi.m; sourceTree = "<group>"; };
+		CC4A3BD218F4E3920044DC77 /* GwBaseBi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwBaseBi.h; sourceTree = "<group>"; };
+		CC4A3BD318F4E3920044DC77 /* GwBaseBi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwBaseBi.m; sourceTree = "<group>"; };
+		CC4A3BD818F532560044DC77 /* GwWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwWeather.h; sourceTree = "<group>"; };
+		CC4A3BD918F532560044DC77 /* GwWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwWeather.m; sourceTree = "<group>"; };
+		CC4A3BDC18F533FB0044DC77 /* GwTempModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwTempModel.h; sourceTree = "<group>"; };
+		CC4A3BDD18F533FB0044DC77 /* GwTempModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwTempModel.m; sourceTree = "<group>"; };
 		CC4E4DEF18EE875F004BD9BC /* GwTempView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwTempView.h; sourceTree = "<group>"; };
 		CC4E4DF018EE875F004BD9BC /* GwTempView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwTempView.m; sourceTree = "<group>"; };
 		CC4E4DF318EEAC6F004BD9BC /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -385,20 +397,21 @@
 		CC0D365818838A02007798CC /* GwGroup */ = {
 			isa = PBXGroup;
 			children = (
-				CC2DB07618EAB5280099170D /* Bussiness */,
-				CC0D36B518838CBD007798CC /* AppConstant.h */,
 				CC0D366118838A02007798CC /* GwAppDelegate.h */,
 				CC0D366218838A02007798CC /* GwAppDelegate.m */,
 				CC46ECCA18ED4323008DA113 /* GwRootViewController.h */,
 				CC46ECCB18ED4323008DA113 /* GwRootViewController.m */,
 				CC46ECCC18ED4323008DA113 /* GwRootViewController.xib */,
+				CC0D368118838A5C007798CC /* GwBaseViewController.h */,
+				CC0D368218838A5C007798CC /* GwBaseViewController.m */,
+				CC4A3BD618F528870044DC77 /* Category */,
+				CC4A3BD518F520740044DC77 /* Constant */,
+				CC2DB07618EAB5280099170D /* Bussiness */,
 				CC2D258118C86F6300E7F545 /* Map */,
 				CC3D216E188E72A500BE1667 /* DbHelper */,
 				CC3D2167188E712400BE1667 /* model */,
 				CC0D36B118838C84007798CC /* Util */,
 				CC0D368418838B14007798CC /* ThirdPart */,
-				CC0D368118838A5C007798CC /* GwBaseViewController.h */,
-				CC0D368218838A5C007798CC /* GwBaseViewController.m */,
 				CC0D366418838A02007798CC /* Images.xcassets */,
 				CC0D365918838A02007798CC /* Supporting Files */,
 			);
@@ -481,8 +494,6 @@
 				CC2DB07218EAA73C0099170D /* TableDataSource */,
 				CC0D36B218838C92007798CC /* GwUtil.h */,
 				CC0D36B318838C92007798CC /* GwUtil.m */,
-				CC0D36B618838D91007798CC /* UIViewController+Adapter.h */,
-				CC0D36B718838D91007798CC /* UIViewController+Adapter.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -504,6 +515,8 @@
 			children = (
 				CC13852218EBB0F400A9FEFB /* GwStateImage.h */,
 				CC13852318EBB0F400A9FEFB /* GwStateImage.m */,
+				CC4A3BCB18F4E2CE0044DC77 /* GwWeatherBi.h */,
+				CC4A3BCC18F4E2CE0044DC77 /* GwWeatherBi.m */,
 			);
 			name = WeatherState;
 			sourceTree = "<group>";
@@ -523,8 +536,12 @@
 		CC20679E18F3FDF9009E25E0 /* WeatherModel */ = {
 			isa = PBXGroup;
 			children = (
-				CC20679F18F3FE11009E25E0 /* GwWeather.h */,
-				CC2067A018F3FE11009E25E0 /* GwWeather.m */,
+				CC20679F18F3FE11009E25E0 /* GwForecastWeatherItem.h */,
+				CC2067A018F3FE11009E25E0 /* GwForecastWeatherItem.m */,
+				CC4A3BD818F532560044DC77 /* GwWeather.h */,
+				CC4A3BD918F532560044DC77 /* GwWeather.m */,
+				CC4A3BDC18F533FB0044DC77 /* GwTempModel.h */,
+				CC4A3BDD18F533FB0044DC77 /* GwTempModel.m */,
 			);
 			name = WeatherModel;
 			sourceTree = "<group>";
@@ -732,6 +749,8 @@
 		CC2DB07618EAB5280099170D /* Bussiness */ = {
 			isa = PBXGroup;
 			children = (
+				CC4A3BD218F4E3920044DC77 /* GwBaseBi.h */,
+				CC4A3BD318F4E3920044DC77 /* GwBaseBi.m */,
 				CC4E4DE818EE8681004BD9BC /* TempLabel */,
 				CC46ECC918ED40D3008DA113 /* Main */,
 				CC13852118EBB0C100A9FEFB /* WeatherState */,
@@ -800,6 +819,24 @@
 				CC46ECD118ED681E008DA113 /* GwMainCellModel.m */,
 			);
 			name = MainCellModel;
+			sourceTree = "<group>";
+		};
+		CC4A3BD518F520740044DC77 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				CC0D36B518838CBD007798CC /* AppConstant.h */,
+			);
+			name = Constant;
+			sourceTree = "<group>";
+		};
+		CC4A3BD618F528870044DC77 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				CC0D36B618838D91007798CC /* UIViewController+Adapter.h */,
+				CC0D36B718838D91007798CC /* UIViewController+Adapter.m */,
+			);
+			name = Category;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		CC4E4DE818EE8681004BD9BC /* TempLabel */ = {
@@ -929,11 +966,15 @@
 				CC2D258418C86F8700E7F545 /* GwBaiduMapHelper.m in Sources */,
 				CC3D216D188E716500BE1667 /* GwCityCode.m in Sources */,
 				CC0D369D18838B14007798CC /* AFSecurityPolicy.m in Sources */,
-				CC2067A118F3FE11009E25E0 /* GwWeather.m in Sources */,
+				CC2067A118F3FE11009E25E0 /* GwForecastWeatherItem.m in Sources */,
+				CC4A3BDE18F533FB0044DC77 /* GwTempModel.m in Sources */,
+				CC4A3BCD18F4E2CE0044DC77 /* GwWeatherBi.m in Sources */,
 				CC46ECC718ED0722008DA113 /* UIImage+ImageEffects.m in Sources */,
 				CC2DB07A18EAB5470099170D /* GwMainTableViewCell.m in Sources */,
 				CC3D218D188FC50600BE1667 /* GwCityOp.m in Sources */,
+				CC4A3BD418F4E3920044DC77 /* GwBaseBi.m in Sources */,
 				CC0D369B18838B14007798CC /* AFHTTPSessionManager.m in Sources */,
+				CC4A3BDA18F532560044DC77 /* GwWeather.m in Sources */,
 				CC0D369F18838B14007798CC /* AFURLRequestSerialization.m in Sources */,
 				CC20679D18F3F244009E25E0 /* JastorRuntimeHelper.m in Sources */,
 				CC0D36A118838B14007798CC /* AFURLSessionManager.m in Sources */,

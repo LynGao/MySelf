@@ -10,7 +10,8 @@
 #import <CoreText/CoreText.h>
 @interface GwTempView()
 {
-    int _temp;
+    UILabel *_tempLabel;
+    UILabel *_zero;
 }
 
 @end
@@ -20,7 +21,22 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+         [self setBackgroundColor:[UIColor clearColor]];
+        _tempLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 70)];
+        [_tempLabel setText:[NSString stringWithFormat:@"%d",_temp]];
+        [_tempLabel setBackgroundColor:[UIColor clearColor]];
+        [_tempLabel setTextColor:[UIColor whiteColor]];
+        [_tempLabel setTextAlignment:NSTextAlignmentCenter];
+        [_tempLabel setFont:[UIFont fontWithName:@"Times New Roman" size:80]];
         
+        _zero = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetWidth(_tempLabel.frame) + _tempLabel.frame.origin.x, _tempLabel.frame.origin.y, 20, 20)];
+        [_zero setText:@"o"];
+        [_zero setBackgroundColor:[UIColor clearColor]];
+        [_zero setTextColor:[UIColor whiteColor]];
+        [_zero setFont:[UIFont fontWithName:@"Times New Roman" size:20]];
+        
+        [self addSubview:_tempLabel];
+        [self addSubview:_zero];
     }
     return self;
 }
@@ -29,34 +45,35 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setBackgroundColor:[UIColor clearColor]];
+        [self setBackgroundColor:[UIColor redColor]];
         _temp = temp;
-        
-//        for (NSString *s in [UIFont familyNames]) {
-//            GWLog(@"s = %@",s);
-//        }
-        
-        UILabel *tempLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 75, 70)];
-        [tempLabel setText:[NSString stringWithFormat:@"%d",_temp]];
-        [tempLabel setBackgroundColor:[UIColor clearColor]];
-        [tempLabel setTextColor:[UIColor whiteColor]];
-        [tempLabel setTextAlignment:NSTextAlignmentCenter];
-        [tempLabel setFont:[UIFont fontWithName:@"Times New Roman" size:80]];
-        
-        UILabel *zero = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetWidth(tempLabel.frame) + tempLabel.frame.origin.x, tempLabel.frame.origin.y, 20, 20)];
-        [zero setText:@"o"];
-        [zero setBackgroundColor:[UIColor clearColor]];
-        [zero setTextColor:[UIColor whiteColor]];
-        [zero setFont:[UIFont fontWithName:@"Times New Roman" size:20]];
 
-        [self addSubview:tempLabel];
-        [self addSubview:zero];
+        _tempLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 75, 70)];
+        [_tempLabel setText:[NSString stringWithFormat:@"%d",_temp]];
+        [_tempLabel setBackgroundColor:[UIColor clearColor]];
+        [_tempLabel setTextColor:[UIColor whiteColor]];
+        [_tempLabel setTextAlignment:NSTextAlignmentCenter];
+        [_tempLabel setFont:[UIFont fontWithName:@"Times New Roman" size:80]];
+        
+        _zero = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetWidth(_tempLabel.frame) + _tempLabel.frame.origin.x, _tempLabel.frame.origin.y, 20, 20)];
+        [_zero setText:@"o"];
+        [_zero setBackgroundColor:[UIColor clearColor]];
+        [_zero setTextColor:[UIColor whiteColor]];
+        [_zero setFont:[UIFont fontWithName:@"Times New Roman" size:20]];
+
+        [self addSubview:_tempLabel];
+        [self addSubview:_zero];
         
     }
     return self;
 }
 
-//
+- (void)refreshView
+{
+    [_tempLabel setText:[NSString stringWithFormat:@"%d",_temp]];
+}
+
+
 //- (void)drawRect:(CGRect)rect
 //{
 //    [super drawRect:rect];

@@ -10,5 +10,9 @@
 
 @interface GwTempView : UIView
 
+@property (nonatomic,assign) int temp;
+
 - (id)initWithFrame:(CGRect)frame tempreture:(int)temp bigStu:(BOOL)flag;
+
+- (void)refreshView;
 @end

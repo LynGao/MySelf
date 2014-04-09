@@ -7,7 +7,7 @@
 //
 
 #import "GwMainTableViewCell.h"
-#import "GwTempView.h"
+
 
 @implementation GwMainTableViewCell
 
@@ -48,30 +48,36 @@
     
     _stateImage = [[UIImageView alloc] initWithFrame:CGRectZero];
     
+    _tempView = [[GwTempView alloc] initWithFrame:CGRectZero];
+    
     [self.contentView addSubview:_curStatuLable];
     [self.contentView addSubview:_curTempretureLable];
     [self.contentView addSubview:_todayLowestLable];
     [self.contentView addSubview:_todayHightestLable];
     [self.contentView addSubview:_stateImage];
+    [self.contentView addSubview:_tempView];
 
 }
 
 - (void)layoutSubviews
 {
-    UIImage *image = [UIImage imageNamed:_model.statuImgName];
+    UIImage *image = [UIImage imageNamed:@"weather-clear"];
     CGSize imgSize = image.size;
-    CGRect rect = CGRectMake((self.frame.size.width - imgSize.width) / 2, 250, imgSize.width, imgSize.height);
+    CGRect rect = CGRectMake((self.frame.size.width - imgSize.width) / 2 + 60, self.frame.size.height - 150, imgSize.width, imgSize.height);
     [_stateImage setImage:image];
     [_stateImage setFrame:rect];
     
     CGRect stuLabelRect = CGRectMake(_stateImage.frame.size.width + _stateImage.frame.origin.x + 5, rect.origin.y + 10, 100, 21);
-    [_curStatuLable setFont:[UIFont boldSystemFontOfSize:20]];
+    [_curStatuLable setFont:[UIFont boldSystemFontOfSize:13]];
     [_curStatuLable setBackgroundColor:[UIColor clearColor]];
     [_curStatuLable setTextColor:[UIColor whiteColor]];
     [_curStatuLable setText:_model.curStatu];
     [_curStatuLable setFrame:stuLabelRect];
     
-    GwTempView *temp = [[GwTempView alloc] initWithFrame:CGRectMake(rect.origin.x - 5, stuLabelRect.origin.y + stuLabelRect.size.height + 5, 100, 100) tempreture:[_model.curTempreture intValue] bigStu:YES];
-    [self addSubview:temp];
+    
+    CGRect tempRect = CGRectMake(rect.origin.x - 5, stuLabelRect.origin.y + stuLabelRect.size.height + 5, 80, 70);
+    [_tempView setFrame:tempRect];
+    [_tempView setTemp:_model.curTempreture.intValue];
+    [_tempView refreshView];
 }
 @end
