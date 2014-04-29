@@ -82,12 +82,17 @@
     return param;
 }
 
-+ (void)formatGMT:(NSInteger)gmt
++ (NSString *)formatGMT:(NSInteger)gmt
 {
 
     NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:gmt];
+    NSString *regula = @"yyyy-MM-dd hh:mm:ss";
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setTimeZone:[NSTimeZone systemTimeZone]];
+    [formatter setDateFormat:regula];
     
-    NSLog(@"confromTimesp --- %@",confromTimesp);
+    return [formatter stringFromDate:confromTimesp];
+
 }
 
 @end

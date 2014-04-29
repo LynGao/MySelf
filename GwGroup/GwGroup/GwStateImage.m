@@ -21,7 +21,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.imageName = @"weather-few-night";
+//        self.imageName = @"weather-few-night";
     }
     return self;
 }

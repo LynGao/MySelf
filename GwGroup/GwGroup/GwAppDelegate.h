@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GwLocationManager.h"
 
-@interface GwAppDelegate : UIResponder <UIApplicationDelegate>
+@interface GwAppDelegate : UIResponder <UIApplicationDelegate,LocationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

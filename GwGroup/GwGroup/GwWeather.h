@@ -8,7 +8,12 @@
 
 #import "GwBaseModel.h"
 
+/**
+ *  json 字段与 对象字段要保持一致。如 json:{"clouds":55} ----> modle: GwCloud clouds; clouds要相等
+ */
 @interface GwWeather : GwBaseModel
+
+
 
 @property (nonatomic, strong) NSString *description;
 @property (nonatomic, strong) NSString *icon;

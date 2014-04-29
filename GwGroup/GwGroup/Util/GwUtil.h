@@ -10,7 +10,7 @@
 
 @interface GwUtil : NSObject
 
-+ (void)formatGMT:(NSInteger)gmt;
++ (NSString *)formatGMT:(NSInteger)gmt;
 
 + (void)loadWorldId;
 

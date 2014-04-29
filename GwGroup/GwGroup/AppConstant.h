@@ -11,7 +11,9 @@
 
 #define ROOT_FORECAST_URL @"http://api.openweathermap.org/data/2.5/forecast/daily"
 
-#define ROOT_CURWEATHER_URL @"api.openweathermap.org/data/2.5/weather"
+#define ROOT_CURWEATHER_URL @"http://api.openweathermap.org/data/2.5/weather"
+
+#define WEAHTER_STATU_IMAGE_URL @"http://openweathermap.org/img/w"
 
 #define DB_NAME @"db" 
 #define DB_EXT @".sqlite3"
@@ -35,7 +37,16 @@
 
 #define SYSTEMOSVERSION [[[UIDevice currentDevice] systemVersion] floatValue]
 
+#define CURLOCATION [[NSUserDefaults standardUserDefaults] objectForKey:CURPLACE]
+
+
 /**** tips *****/
 #define REQUEST_FAIL @"请求失败,请稍后再试!"
 
+
+/**** constants *****/
+#define CURPLACE @"CURPLACE"
+#define LOCATION_NOTIF_NAME @"LocaSuccess"
+
+#define APP_WEATHER_ID @"372c9df12862eb4d8f0b9903ec961bc0"
 #endif

@@ -20,4 +20,13 @@
 @property (nonatomic, strong) UILabel *todayHightestLable;
 @property (nonatomic, strong) UIImageView *stateImage;
 @property (nonatomic, strong) GwTempView *tempView;
+
+@property (nonatomic, strong) UILabel *cityName;
+@property (nonatomic, strong) UILabel *timeLabel;
+
+@property (nonatomic, strong) UILabel *humidityLabel;//湿度
+
+
+
+
 @end

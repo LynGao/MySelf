@@ -41,6 +41,12 @@
 		CC13851F18EBB09800A9FEFB /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = CC13851C18EBB09800A9FEFB /* UIScrollView+SVInfiniteScrolling.m */; };
 		CC13852018EBB09800A9FEFB /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = CC13851E18EBB09800A9FEFB /* UIScrollView+SVPullToRefresh.m */; };
 		CC13852418EBB0F400A9FEFB /* GwStateImage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC13852318EBB0F400A9FEFB /* GwStateImage.m */; };
+		CC1A4DCE1900FE1600F3A07D /* GwCurWeatherItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1A4DCD1900FE1600F3A07D /* GwCurWeatherItem.m */; };
+		CC1A4DD11900FEB900F3A07D /* GwCoord.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1A4DD01900FEB900F3A07D /* GwCoord.m */; };
+		CC1A4DD41900FF4700F3A07D /* GwCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1A4DD31900FF4700F3A07D /* GwCloud.m */; };
+		CC1A4DD71901004200F3A07D /* GwMain.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1A4DD61901004200F3A07D /* GwMain.m */; };
+		CC1A4DDA1901099100F3A07D /* GwRain.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1A4DD91901099100F3A07D /* GwRain.m */; };
+		CC1A4DDE19011D9F00F3A07D /* GwLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1A4DDD19011D9F00F3A07D /* GwLocationManager.m */; };
 		CC20679C18F3F244009E25E0 /* Jastor.m in Sources */ = {isa = PBXBuildFile; fileRef = CC20679918F3F244009E25E0 /* Jastor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CC20679D18F3F244009E25E0 /* JastorRuntimeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CC20679B18F3F244009E25E0 /* JastorRuntimeHelper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CC2067A118F3FE11009E25E0 /* GwForecastWeatherItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2067A018F3FE11009E25E0 /* GwForecastWeatherItem.m */; };
@@ -70,9 +76,19 @@
 		CC4A3BD418F4E3920044DC77 /* GwBaseBi.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4A3BD318F4E3920044DC77 /* GwBaseBi.m */; };
 		CC4A3BDA18F532560044DC77 /* GwWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4A3BD918F532560044DC77 /* GwWeather.m */; };
 		CC4A3BDE18F533FB0044DC77 /* GwTempModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4A3BDD18F533FB0044DC77 /* GwTempModel.m */; };
+		CC4D32EB190664D300ADB8AB /* PictureScrollAuto.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4D32D9190664D300ADB8AB /* PictureScrollAuto.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CC4D32EC190664D300ADB8AB /* BaseImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4D32DC190664D300ADB8AB /* BaseImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CC4D32ED190664D300ADB8AB /* GwCachManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4D32DF190664D300ADB8AB /* GwCachManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CC4D32EE190664D300ADB8AB /* GwDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4D32E1190664D300ADB8AB /* GwDownloader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CC4D32EF190664D300ADB8AB /* GwImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4D32E3190664D300ADB8AB /* GwImageManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CC4D32F0190664D300ADB8AB /* ProcessView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4D32E5190664D300ADB8AB /* ProcessView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CC4D32F1190664D300ADB8AB /* ShowBigPicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4D32E7190664D300ADB8AB /* ShowBigPicViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CC4D32F2190664D300ADB8AB /* UIImageView+GwImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4D32EA190664D300ADB8AB /* UIImageView+GwImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CC4E4DF118EE875F004BD9BC /* GwTempView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4E4DF018EE875F004BD9BC /* GwTempView.m */; };
 		CC4E4DF418EEAC6F004BD9BC /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4E4DF318EEAC6F004BD9BC /* CoreText.framework */; };
 		CCAA8B2518EBFDFD0030D6E0 /* GwTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAA8B2418EBFDFD0030D6E0 /* GwTableViewDelegate.m */; };
+		CCFC332718FFD86800FFE6B2 /* GwWind.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFC332618FFD86800FFE6B2 /* GwWind.m */; };
+		CCFC332A18FFD8D400FFE6B2 /* GwSys.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFC332918FFD8D400FFE6B2 /* GwSys.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +158,18 @@
 		CC13851E18EBB09800A9FEFB /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 		CC13852218EBB0F400A9FEFB /* GwStateImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwStateImage.h; sourceTree = "<group>"; };
 		CC13852318EBB0F400A9FEFB /* GwStateImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwStateImage.m; sourceTree = "<group>"; };
+		CC1A4DCC1900FE1600F3A07D /* GwCurWeatherItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwCurWeatherItem.h; sourceTree = "<group>"; };
+		CC1A4DCD1900FE1600F3A07D /* GwCurWeatherItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwCurWeatherItem.m; sourceTree = "<group>"; };
+		CC1A4DCF1900FEB900F3A07D /* GwCoord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwCoord.h; sourceTree = "<group>"; };
+		CC1A4DD01900FEB900F3A07D /* GwCoord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwCoord.m; sourceTree = "<group>"; };
+		CC1A4DD21900FF4700F3A07D /* GwCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwCloud.h; sourceTree = "<group>"; };
+		CC1A4DD31900FF4700F3A07D /* GwCloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwCloud.m; sourceTree = "<group>"; };
+		CC1A4DD51901004200F3A07D /* GwMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwMain.h; sourceTree = "<group>"; };
+		CC1A4DD61901004200F3A07D /* GwMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwMain.m; sourceTree = "<group>"; };
+		CC1A4DD81901099100F3A07D /* GwRain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwRain.h; sourceTree = "<group>"; };
+		CC1A4DD91901099100F3A07D /* GwRain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwRain.m; sourceTree = "<group>"; };
+		CC1A4DDC19011D9F00F3A07D /* GwLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwLocationManager.h; sourceTree = "<group>"; };
+		CC1A4DDD19011D9F00F3A07D /* GwLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwLocationManager.m; sourceTree = "<group>"; };
 		CC20679718F3F244009E25E0 /* Jastor-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Jastor-Prefix.pch"; sourceTree = "<group>"; };
 		CC20679818F3F244009E25E0 /* Jastor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jastor.h; sourceTree = "<group>"; };
 		CC20679918F3F244009E25E0 /* Jastor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jastor.m; sourceTree = "<group>"; };
@@ -311,11 +339,32 @@
 		CC4A3BD918F532560044DC77 /* GwWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwWeather.m; sourceTree = "<group>"; };
 		CC4A3BDC18F533FB0044DC77 /* GwTempModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwTempModel.h; sourceTree = "<group>"; };
 		CC4A3BDD18F533FB0044DC77 /* GwTempModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwTempModel.m; sourceTree = "<group>"; };
+		CC4D32D8190664D300ADB8AB /* PictureScrollAuto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureScrollAuto.h; sourceTree = "<group>"; };
+		CC4D32D9190664D300ADB8AB /* PictureScrollAuto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureScrollAuto.m; sourceTree = "<group>"; };
+		CC4D32DB190664D300ADB8AB /* BaseImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseImageView.h; path = CacheImage/BaseImageView.h; sourceTree = "<group>"; };
+		CC4D32DC190664D300ADB8AB /* BaseImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseImageView.m; path = CacheImage/BaseImageView.m; sourceTree = "<group>"; };
+		CC4D32DD190664D300ADB8AB /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		CC4D32DE190664D300ADB8AB /* GwCachManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwCachManager.h; sourceTree = "<group>"; };
+		CC4D32DF190664D300ADB8AB /* GwCachManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwCachManager.m; sourceTree = "<group>"; };
+		CC4D32E0190664D300ADB8AB /* GwDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwDownloader.h; sourceTree = "<group>"; };
+		CC4D32E1190664D300ADB8AB /* GwDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwDownloader.m; sourceTree = "<group>"; };
+		CC4D32E2190664D300ADB8AB /* GwImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwImageManager.h; sourceTree = "<group>"; };
+		CC4D32E3190664D300ADB8AB /* GwImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwImageManager.m; sourceTree = "<group>"; };
+		CC4D32E4190664D300ADB8AB /* ProcessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessView.h; sourceTree = "<group>"; };
+		CC4D32E5190664D300ADB8AB /* ProcessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessView.m; sourceTree = "<group>"; };
+		CC4D32E6190664D300ADB8AB /* ShowBigPicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShowBigPicViewController.h; path = CacheImage/ShowBigPicViewController.h; sourceTree = "<group>"; };
+		CC4D32E7190664D300ADB8AB /* ShowBigPicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowBigPicViewController.m; path = CacheImage/ShowBigPicViewController.m; sourceTree = "<group>"; };
+		CC4D32E9190664D300ADB8AB /* UIImageView+GwImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+GwImageView.h"; sourceTree = "<group>"; };
+		CC4D32EA190664D300ADB8AB /* UIImageView+GwImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+GwImageView.m"; sourceTree = "<group>"; };
 		CC4E4DEF18EE875F004BD9BC /* GwTempView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwTempView.h; sourceTree = "<group>"; };
 		CC4E4DF018EE875F004BD9BC /* GwTempView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwTempView.m; sourceTree = "<group>"; };
 		CC4E4DF318EEAC6F004BD9BC /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		CCAA8B2318EBFDFD0030D6E0 /* GwTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwTableViewDelegate.h; sourceTree = "<group>"; };
 		CCAA8B2418EBFDFD0030D6E0 /* GwTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwTableViewDelegate.m; sourceTree = "<group>"; };
+		CCFC332518FFD86800FFE6B2 /* GwWind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwWind.h; sourceTree = "<group>"; };
+		CCFC332618FFD86800FFE6B2 /* GwWind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwWind.m; sourceTree = "<group>"; };
+		CCFC332818FFD8D400FFE6B2 /* GwSys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwSys.h; sourceTree = "<group>"; };
+		CCFC332918FFD8D400FFE6B2 /* GwSys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwSys.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -404,6 +453,7 @@
 				CC46ECCC18ED4323008DA113 /* GwRootViewController.xib */,
 				CC0D368118838A5C007798CC /* GwBaseViewController.h */,
 				CC0D368218838A5C007798CC /* GwBaseViewController.m */,
+				CC1A4DDF1901296300F3A07D /* Views */,
 				CC4A3BD618F528870044DC77 /* Category */,
 				CC4A3BD518F520740044DC77 /* Constant */,
 				CC2DB07618EAB5280099170D /* Bussiness */,
@@ -453,6 +503,7 @@
 		CC0D368418838B14007798CC /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				CC4D32D6190664D300ADB8AB /* GwCacheImage */,
 				CC20679618F3F244009E25E0 /* Jastor */,
 				CC46ECC218ED0715008DA113 /* Gansi */,
 				CC13851918EBB09800A9FEFB /* SVPullToRefresh */,
@@ -498,6 +549,17 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		CC0E4D01190F53180040EEC7 /* ShowBig */ = {
+			isa = PBXGroup;
+			children = (
+				CC4D32DB190664D300ADB8AB /* BaseImageView.h */,
+				CC4D32DC190664D300ADB8AB /* BaseImageView.m */,
+				CC4D32E6190664D300ADB8AB /* ShowBigPicViewController.h */,
+				CC4D32E7190664D300ADB8AB /* ShowBigPicViewController.m */,
+			);
+			name = ShowBig;
+			sourceTree = "<group>";
+		};
 		CC13851918EBB09800A9FEFB /* SVPullToRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,15 +572,24 @@
 			path = SVPullToRefresh;
 			sourceTree = "<group>";
 		};
-		CC13852118EBB0C100A9FEFB /* WeatherState */ = {
+		CC1A4DDB19011D8400F3A07D /* LocationManger */ = {
+			isa = PBXGroup;
+			children = (
+				CC1A4DDC19011D9F00F3A07D /* GwLocationManager.h */,
+				CC1A4DDD19011D9F00F3A07D /* GwLocationManager.m */,
+			);
+			name = LocationManger;
+			sourceTree = "<group>";
+		};
+		CC1A4DDF1901296300F3A07D /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				CC13852218EBB0F400A9FEFB /* GwStateImage.h */,
 				CC13852318EBB0F400A9FEFB /* GwStateImage.m */,
-				CC4A3BCB18F4E2CE0044DC77 /* GwWeatherBi.h */,
-				CC4A3BCC18F4E2CE0044DC77 /* GwWeatherBi.m */,
+				CC46ECC918ED40D3008DA113 /* MainCell */,
+				CC4E4DE818EE8681004BD9BC /* TempView */,
 			);
-			name = WeatherState;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		CC20679618F3F244009E25E0 /* Jastor */ = {
@@ -538,10 +609,24 @@
 			children = (
 				CC20679F18F3FE11009E25E0 /* GwForecastWeatherItem.h */,
 				CC2067A018F3FE11009E25E0 /* GwForecastWeatherItem.m */,
+				CC1A4DCC1900FE1600F3A07D /* GwCurWeatherItem.h */,
+				CC1A4DCD1900FE1600F3A07D /* GwCurWeatherItem.m */,
 				CC4A3BD818F532560044DC77 /* GwWeather.h */,
 				CC4A3BD918F532560044DC77 /* GwWeather.m */,
 				CC4A3BDC18F533FB0044DC77 /* GwTempModel.h */,
 				CC4A3BDD18F533FB0044DC77 /* GwTempModel.m */,
+				CCFC332518FFD86800FFE6B2 /* GwWind.h */,
+				CCFC332618FFD86800FFE6B2 /* GwWind.m */,
+				CCFC332818FFD8D400FFE6B2 /* GwSys.h */,
+				CCFC332918FFD8D400FFE6B2 /* GwSys.m */,
+				CC1A4DCF1900FEB900F3A07D /* GwCoord.h */,
+				CC1A4DD01900FEB900F3A07D /* GwCoord.m */,
+				CC1A4DD21900FF4700F3A07D /* GwCloud.h */,
+				CC1A4DD31900FF4700F3A07D /* GwCloud.m */,
+				CC1A4DD51901004200F3A07D /* GwMain.h */,
+				CC1A4DD61901004200F3A07D /* GwMain.m */,
+				CC1A4DD81901099100F3A07D /* GwRain.h */,
+				CC1A4DD91901099100F3A07D /* GwRain.m */,
 			);
 			name = WeatherModel;
 			sourceTree = "<group>";
@@ -728,6 +813,7 @@
 		CC2D258118C86F6300E7F545 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				CC1A4DDB19011D8400F3A07D /* LocationManger */,
 				CC2D258218C86F8700E7F545 /* GwBaiduMapHelper.h */,
 				CC2D258318C86F8700E7F545 /* GwBaiduMapHelper.m */,
 			);
@@ -751,9 +837,8 @@
 			children = (
 				CC4A3BD218F4E3920044DC77 /* GwBaseBi.h */,
 				CC4A3BD318F4E3920044DC77 /* GwBaseBi.m */,
-				CC4E4DE818EE8681004BD9BC /* TempLabel */,
-				CC46ECC918ED40D3008DA113 /* Main */,
-				CC13852118EBB0C100A9FEFB /* WeatherState */,
+				CC4A3BCB18F4E2CE0044DC77 /* GwWeatherBi.h */,
+				CC4A3BCC18F4E2CE0044DC77 /* GwWeatherBi.m */,
 			);
 			name = Bussiness;
 			sourceTree = "<group>";
@@ -803,13 +888,13 @@
 			name = Gansi;
 			sourceTree = "<group>";
 		};
-		CC46ECC918ED40D3008DA113 /* Main */ = {
+		CC46ECC918ED40D3008DA113 /* MainCell */ = {
 			isa = PBXGroup;
 			children = (
 				CC2DB07718EAB5470099170D /* GwMainTableViewCell.h */,
 				CC2DB07818EAB5470099170D /* GwMainTableViewCell.m */,
 			);
-			name = Main;
+			name = MainCell;
 			sourceTree = "<group>";
 		};
 		CC46ECCF18ED6809008DA113 /* MainCellModel */ = {
@@ -839,13 +924,58 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		CC4E4DE818EE8681004BD9BC /* TempLabel */ = {
+		CC4D32D6190664D300ADB8AB /* GwCacheImage */ = {
+			isa = PBXGroup;
+			children = (
+				CC0E4D01190F53180040EEC7 /* ShowBig */,
+				CC4D32E8190664D300ADB8AB /* Category */,
+				CC4D32D7190664D300ADB8AB /* AutoScroll */,
+				CC4D32DA190664D300ADB8AB /* CacheImage */,
+			);
+			path = GwCacheImage;
+			sourceTree = "<group>";
+		};
+		CC4D32D7190664D300ADB8AB /* AutoScroll */ = {
+			isa = PBXGroup;
+			children = (
+				CC4D32D8190664D300ADB8AB /* PictureScrollAuto.h */,
+				CC4D32D9190664D300ADB8AB /* PictureScrollAuto.m */,
+			);
+			path = AutoScroll;
+			sourceTree = "<group>";
+		};
+		CC4D32DA190664D300ADB8AB /* CacheImage */ = {
+			isa = PBXGroup;
+			children = (
+				CC4D32DD190664D300ADB8AB /* Constant.h */,
+				CC4D32DE190664D300ADB8AB /* GwCachManager.h */,
+				CC4D32DF190664D300ADB8AB /* GwCachManager.m */,
+				CC4D32E0190664D300ADB8AB /* GwDownloader.h */,
+				CC4D32E1190664D300ADB8AB /* GwDownloader.m */,
+				CC4D32E2190664D300ADB8AB /* GwImageManager.h */,
+				CC4D32E3190664D300ADB8AB /* GwImageManager.m */,
+				CC4D32E4190664D300ADB8AB /* ProcessView.h */,
+				CC4D32E5190664D300ADB8AB /* ProcessView.m */,
+			);
+			path = CacheImage;
+			sourceTree = "<group>";
+		};
+		CC4D32E8190664D300ADB8AB /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				CC4D32E9190664D300ADB8AB /* UIImageView+GwImageView.h */,
+				CC4D32EA190664D300ADB8AB /* UIImageView+GwImageView.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		CC4E4DE818EE8681004BD9BC /* TempView */ = {
 			isa = PBXGroup;
 			children = (
 				CC4E4DEF18EE875F004BD9BC /* GwTempView.h */,
 				CC4E4DF018EE875F004BD9BC /* GwTempView.m */,
 			);
-			name = TempLabel;
+			name = TempView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -951,13 +1081,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC46ECD218ED681E008DA113 /* GwMainCellModel.m in Sources */,
+				CC1A4DD41900FF4700F3A07D /* GwCloud.m in Sources */,
+				CC1A4DD11900FEB900F3A07D /* GwCoord.m in Sources */,
 				CC3D216A188E714600BE1667 /* GwBaseModel.m in Sources */,
 				CC2DB07518EAA77B0099170D /* GwTableDataSource.m in Sources */,
 				CC0D369918838B14007798CC /* AFHTTPRequestOperation.m in Sources */,
+				CC4D32F0190664D300ADB8AB /* ProcessView.m in Sources */,
 				CC0D36B418838C92007798CC /* GwUtil.m in Sources */,
 				CC0D36B818838D91007798CC /* UIViewController+Adapter.m in Sources */,
 				CC0D368318838A5C007798CC /* GwBaseViewController.m in Sources */,
 				CC0D369A18838B14007798CC /* AFHTTPRequestOperationManager.m in Sources */,
+				CC4D32F2190664D300ADB8AB /* UIImageView+GwImageView.m in Sources */,
 				CC0D369C18838B14007798CC /* AFNetworkReachabilityManager.m in Sources */,
 				CC46ECCD18ED4323008DA113 /* GwRootViewController.m in Sources */,
 				CC0D36A018838B14007798CC /* AFURLResponseSerialization.m in Sources */,
@@ -966,20 +1100,31 @@
 				CC2D258418C86F8700E7F545 /* GwBaiduMapHelper.m in Sources */,
 				CC3D216D188E716500BE1667 /* GwCityCode.m in Sources */,
 				CC0D369D18838B14007798CC /* AFSecurityPolicy.m in Sources */,
+				CC1A4DD71901004200F3A07D /* GwMain.m in Sources */,
+				CC4D32EC190664D300ADB8AB /* BaseImageView.m in Sources */,
 				CC2067A118F3FE11009E25E0 /* GwForecastWeatherItem.m in Sources */,
 				CC4A3BDE18F533FB0044DC77 /* GwTempModel.m in Sources */,
 				CC4A3BCD18F4E2CE0044DC77 /* GwWeatherBi.m in Sources */,
 				CC46ECC718ED0722008DA113 /* UIImage+ImageEffects.m in Sources */,
+				CC4D32EE190664D300ADB8AB /* GwDownloader.m in Sources */,
 				CC2DB07A18EAB5470099170D /* GwMainTableViewCell.m in Sources */,
 				CC3D218D188FC50600BE1667 /* GwCityOp.m in Sources */,
+				CC1A4DCE1900FE1600F3A07D /* GwCurWeatherItem.m in Sources */,
 				CC4A3BD418F4E3920044DC77 /* GwBaseBi.m in Sources */,
 				CC0D369B18838B14007798CC /* AFHTTPSessionManager.m in Sources */,
+				CC4D32EF190664D300ADB8AB /* GwImageManager.m in Sources */,
+				CC1A4DDE19011D9F00F3A07D /* GwLocationManager.m in Sources */,
 				CC4A3BDA18F532560044DC77 /* GwWeather.m in Sources */,
 				CC0D369F18838B14007798CC /* AFURLRequestSerialization.m in Sources */,
 				CC20679D18F3F244009E25E0 /* JastorRuntimeHelper.m in Sources */,
+				CC4D32EB190664D300ADB8AB /* PictureScrollAuto.m in Sources */,
 				CC0D36A118838B14007798CC /* AFURLSessionManager.m in Sources */,
 				CC20679C18F3F244009E25E0 /* Jastor.m in Sources */,
 				CC13851F18EBB09800A9FEFB /* UIScrollView+SVInfiniteScrolling.m in Sources */,
+				CCFC332718FFD86800FFE6B2 /* GwWind.m in Sources */,
+				CCFC332A18FFD8D400FFE6B2 /* GwSys.m in Sources */,
+				CC4D32ED190664D300ADB8AB /* GwCachManager.m in Sources */,
+				CC1A4DDA1901099100F3A07D /* GwRain.m in Sources */,
 				CC0D366318838A02007798CC /* GwAppDelegate.m in Sources */,
 				CC0D365F18838A02007798CC /* main.m in Sources */,
 				CC3D218A188FC4D600BE1667 /* GwOperation.m in Sources */,
@@ -987,6 +1132,7 @@
 				CC46ECC818ED0722008DA113 /* UIImageView+LBBlurredImage.m in Sources */,
 				CC13852018EBB09800A9FEFB /* UIScrollView+SVPullToRefresh.m in Sources */,
 				CC4E4DF118EE875F004BD9BC /* GwTempView.m in Sources */,
+				CC4D32F1190664D300ADB8AB /* ShowBigPicViewController.m in Sources */,
 				CC13852418EBB0F400A9FEFB /* GwStateImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

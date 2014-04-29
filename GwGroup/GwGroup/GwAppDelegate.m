@@ -11,11 +11,20 @@
 #import "GwRootViewController.h"
 
 
+
+
 @implementation GwAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+//    [[NSUserDefaults standardUserDefaults] setObject:@"北京市" forKey:CURPLACE];
+    
+    [[GwLocationManager shareLocationManger] setDelegate:self];
+    [[GwLocationManager shareLocationManger] startLocation];
+
+    
     GwRootViewController *root = [[GwRootViewController alloc] init];
     self.window.rootViewController = root;
     self.window.backgroundColor = [UIColor whiteColor];
@@ -50,4 +59,20 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+#pragma mark -- location delegate
+- (void)locationSuccess:(NSString *)city
+{
+    if (city) {
+        [[NSUserDefaults standardUserDefaults] setObject:city forKey:CURPLACE];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:LOCATION_NOTIF_NAME object:nil];
+    }
+    
+}
+
+- (void)locationFail:(NSString *)errorString
+{
+    GWLog(@"loaction fail = %@ ",errorString);
+}
 @end

@@ -14,13 +14,24 @@
 #import "GwWeatherBi.h"
 #import "GwForecastWeatherItem.h"
 #import "GwWeather.h"
+#import "GwCurWeatherItem.h"
+#import "GwMain.h"
+#import "SVPullToRefresh.h"
+
 
 @interface GwRootViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     UITableView *_mainTable;
     UIImageView *_bgImage;
+    
+    NSInteger _requestCount;
+    
+    NSMutableDictionary *_curWeatherDict;
+    
+    __block GwCurWeatherItem *curWeatherItem;
 }
 @property (nonatomic, strong) NSMutableArray *forecastArray;
+
 @end
 
 @implementation GwRootViewController
@@ -34,29 +45,56 @@
     return self;
 }
 
+- (void)locationSuccess
+{
+    [self startRequest];
+}
+
+- (void)startRequest
+{
+    [self getCurWeather];
+    [self getForecast];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    [GwUtil formatGMT:1397016000];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(locationSuccess) name:LOCATION_NOTIF_NAME object:nil];
+    
+ 
 
     [self configBlock];
     
-    _bgImage = [[UIImageView alloc] initWithFrame:self.view.frame];
-    [_bgImage setImage:[UIImage imageNamed:@"bg"]];
-    [self.view addSubview:_bgImage];
+//    _bgImage = [[UIImageView alloc] initWithFrame:self.view.frame];
+//    [_bgImage setImage:[UIImage imageNamed:@"bg"]];
+//    [self.view addSubview:_bgImage];
+    
+    [self.view setBackgroundColor:[UIColor lightGrayColor]];
     
     _mainTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height) style:UITableViewStylePlain];
     [_mainTable setBackgroundColor:[UIColor clearColor]];
     [_mainTable setDataSource:self];
     [_mainTable setDelegate:self];
-    [_mainTable setPagingEnabled:YES];
+//    [_mainTable setPagingEnabled:YES];
     [self.view addSubview:_mainTable];
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [self getForecast];
-    });
+    __weak GwRootViewController *weakSelf = self;
+    [_mainTable addPullToRefreshWithActionHandler:^{
+        
+        if (CURLOCATION == nil) {
+            
+        }else{
+            [weakSelf startRequest];
+        }
+        
+        
+    }];
     
+    [_mainTable triggerPullToRefresh];
+    
+   
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,6 +102,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -82,7 +121,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0) {
-        static NSString *identify = @"first";
+        static NSString *identify = @"GwMainTableViewCell";
         GwMainTableViewCell *cell = (GwMainTableViewCell *)[tableView dequeueReusableCellWithIdentifier:identify];
         if (cell == nil) {
             cell = [[GwMainTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identify];
@@ -90,10 +129,9 @@
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         }
         
-        if (_forecastArray.count > 0) {
-            self.cellBlock(_forecastArray[0],cell);
+        if (curWeatherItem) {
+            self.cellBlock(curWeatherItem,cell);
         }
-        
         
         return cell;
     }else{
@@ -103,13 +141,8 @@
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identify];
             [cell setBackgroundColor:[UIColor clearColor]];
         }
-        
-        
-        
         return cell;
     }
-    
-   
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -138,39 +171,93 @@
             GwForecastWeatherItem *item = (GwForecastWeatherItem *)data;
             GwWeather *weather = [item.weather objectAtIndex:0];
             GwTempModel *temp = item.temp;
-            
+        
             GwMainCellModel *model = [[GwMainCellModel alloc] init];
-            model.cityName = @"深圳市";
+            model.cityName = CURLOCATION;
             model.curStatu = weather.description;
             model.curTempreture = temp.day;
             model.statuImgName = weather.icon;
+            model.dt = item.dt;
+            
             [cell setModel:model];
             
-        }else{
+        }else if([data isKindOfClass:[GwCurWeatherItem class]]){
+            
+            GwCurWeatherItem *item = (GwCurWeatherItem *)data;
+            GwWeather *weather = [item.weather objectAtIndex:0];
+            GwMain *main = item.main;
+            
             GwMainCellModel *model = [[GwMainCellModel alloc] init];
-            model.cityName = @"深圳市";
-            //        model.curStatu = @"多云";
-            //        model.curTempreture = @"23";
-            model.statuImgName = @"weather-clear";
-            [cell setModel:model];
-        }
-        
-    };
+            model.cityName = CURLOCATION;
+            model.curStatu = weather.description;
+            model.curTempreture = [NSString stringWithFormat:@"%ld",(long)main.temp];
+            model.statuImgName = weather.icon;
+            model.dt = item.dt;
+            model.todayHightestTemp = [NSString stringWithFormat:@"%.2f",main.temp_max];
+            model.todayLowestTemp = [NSString stringWithFormat:@"%.2f",main.temp_min];
+            model.humidity = main.humidity;
 
+            [cell setModel:model];
+            
+          
+        }
+    };
 }
 
 - (void)getForecast
 {
+     __weak GwRootViewController *weakSelf = self;
+
     GwWeatherBi *bi = [[GwWeatherBi alloc] init];
     
-    NSString *urlString = @"guangzhou";
-
     [bi getForcastWeather:^(id callBackData) {
+        
         NSArray *array = (NSArray *)callBackData;
         self.forecastArray = [NSMutableArray arrayWithArray:array];
-        [_mainTable reloadData];
+        
+        [weakSelf completeCacu];
+        
     } fail:^(id errorMsg) {
         
-    } cityName:urlString];
+        [weakSelf completeCacu];
+        
+    } cityName:CURLOCATION];
+}
+
+
+- (void)getCurWeather
+{
+    __weak GwRootViewController *weakSelf = self;
+    
+    GwWeatherBi *bi = [[GwWeatherBi alloc] init];
+    
+    
+    [bi getCurWeather:^(id callBackData) {
+        
+         curWeatherItem = callBackData;
+        
+         [weakSelf completeCacu];
+        
+    } fail:^(id errorMsg) {
+        
+         [weakSelf completeCacu];
+        
+    } cityName:CURLOCATION];
+
+}
+
+- (void)completeCacu
+{
+    _requestCount++;
+    if (_requestCount == 1) {
+        _requestCount = 0;
+        
+        [_mainTable.pullToRefreshView stopAnimating];
+        
+        [_mainTable reloadData];
+        
+        return;
+    }
+        
 }
 @end
