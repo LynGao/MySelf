@@ -68,4 +68,15 @@
  */
 - (void)getCurWeather:(GetDataFinish)successBlock fail:(GetDataFail)failBlock lon:(float)lon lat:(float)lat;
 
+
+/**
+ *  获取当前6个小时的情况
+ *
+ *  @param successBlock 成功回调
+ *  @param failBlock    失败回调
+ *  @param lon           经度
+ *  @param lat           纬度
+ */
+- (void)getForcastSixHour:(GetDataFinish)successBlock fail:(GetDataFail)failBlock lon:(NSString *)lon lat:(NSString *)lat;
+
 @end

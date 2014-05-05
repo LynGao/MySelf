@@ -8,21 +8,14 @@
 
 #import "GwBaseModel.h"
 #import "GwTempModel.h"
+#import "GwCloud.h"
+#import "GwWind.h"
+#import "GwRain.h"
+//#import "GwMain.m"
+
 @interface GwForecastWeatherItem : GwBaseModel
 
-//@property (nonatomic, strong) NSDictionary *coord;
-//@property (nonatomic, strong) NSDictionary *sys;
-//@property (nonatomic, strong) NSArray *weather;
-//@property (nonatomic, strong) NSString *base;
-//@property (nonatomic, strong) NSDictionary *main;
-//@property (nonatomic, strong) NSDictionary *wind;
-//@property (nonatomic, strong) NSDictionary *clouds;
-//@property (nonatomic, strong) NSString *dt;
-//@property (nonatomic, strong) NSString *_id;
-//@property (nonatomic, strong) NSString *name;
-//@property (nonatomic, strong) NSString *cod;
-
-@property (nonatomic, strong) NSString *clouds;
+//@property (nonatomic, strong) NSString *clouds0;
 @property (nonatomic, strong) NSString *deg;
 @property (nonatomic, assign) NSInteger dt;
 @property (nonatomic, assign) NSInteger humidity;
@@ -31,4 +24,13 @@
 //@property (nonatomic, strong) NSDictionary *temp;
 @property (nonatomic, strong) GwTempModel *temp;
 @property (nonatomic, strong) NSArray *weather;
+
+//add for six hour
+@property (nonatomic, strong) GwCloud *clouds;
+@property (nonatomic, strong) GwWind *wind;
+@property (nonatomic, strong) GwRain *rain;
+@property (nonatomic, strong) NSString *dt_text;
+//@property (nonatomic, strong) GwMain *main;
+
+
 @end

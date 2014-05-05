@@ -64,21 +64,21 @@
     [[GwDbHelper dbShareInstant] copyDbFileDomain];
 }
 
-+ (NSDictionary *)parameterCityName:(NSString *)cityName
++ (NSDictionary *)parameterCityName:(NSString *)cityName cnt:(NSInteger)cnt
 {
-    NSDictionary *param = @{@"q":cityName,@"cnt":@"7",@"mode":@"json",@"lang":@"zh_cn",@"units":@"metric"};
+    NSDictionary *param = @{@"q":cityName,@"cnt":[NSNumber numberWithInteger:cnt],@"mode":@"json",@"lang":@"zh_cn",@"units":@"metric"};
     return param;
 }
 
-+ (NSDictionary *)parameterCityID:(NSInteger)cityId
++ (NSDictionary *)parameterCityID:(NSInteger)cityId cnt:(NSInteger)cnt
 {
-    NSDictionary *param = @{@"id":[NSNumber numberWithInteger:cityId],@"cnt":@"1",@"mode":@"json",@"lang":@"zh_cn",@"units":@"metric"};
+    NSDictionary *param = @{@"id":[NSNumber numberWithInteger:cityId],@"cnt":[NSNumber numberWithInteger:cnt],@"mode":@"json",@"lang":@"zh_cn",@"units":@"metric"};
     return param;
 }
 
-+ (NSDictionary *)parameterCityCoordinats:(float)lon lat:(float)lat;
++ (NSDictionary *)parameterCityCoordinats:(float)lon lat:(float)lat cnt:(NSInteger)cnt;
 {
-    NSDictionary *param = @{@"lat":[NSNumber numberWithFloat:lat],@"lon":[NSNumber numberWithFloat:lon],@"cnt":@"1",@"mode":@"json",@"lang":@"zh_cn",@"units":@"metric"};
+    NSDictionary *param = @{@"lat":[NSNumber numberWithFloat:lat],@"lon":[NSNumber numberWithFloat:lon],@"cnt":[NSNumber numberWithInteger:cnt],@"mode":@"json",@"lang":@"zh_cn",@"units":@"metric"};
     return param;
 }
 

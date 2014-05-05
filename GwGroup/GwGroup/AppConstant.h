@@ -9,6 +9,8 @@
 #ifndef GwGroup_AppConstant_h
 #define GwGroup_AppConstant_h
 
+#define ROOT_FORECAST_SIXHOUR_URL @"http://api.openweathermap.org/data/2.5/forecast"
+
 #define ROOT_FORECAST_URL @"http://api.openweathermap.org/data/2.5/forecast/daily"
 
 #define ROOT_CURWEATHER_URL @"http://api.openweathermap.org/data/2.5/weather"
@@ -37,7 +39,7 @@
 
 #define SYSTEMOSVERSION [[[UIDevice currentDevice] systemVersion] floatValue]
 
-#define CURLOCATION [[NSUserDefaults standardUserDefaults] objectForKey:CURPLACE]
+#define LOCATION [[NSUserDefaults standardUserDefaults] objectForKey:CURPLACE]
 
 
 /**** tips *****/
@@ -46,6 +48,8 @@
 
 /**** constants *****/
 #define CURPLACE @"CURPLACE"
+#define LATITU @"LATITU"
+#define LONGITU @"LONGITU"
 #define LOCATION_NOTIF_NAME @"LocaSuccess"
 
 #define APP_WEATHER_ID @"372c9df12862eb4d8f0b9903ec961bc0"

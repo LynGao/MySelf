@@ -17,7 +17,8 @@
 #import "GwCurWeatherItem.h"
 #import "GwMain.h"
 #import "SVPullToRefresh.h"
-
+#import "GwSixTableViewCell.h"
+#import "UIImageView+GwImageView.h"
 
 @interface GwRootViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -31,6 +32,7 @@
     __block GwCurWeatherItem *curWeatherItem;
 }
 @property (nonatomic, strong) NSMutableArray *forecastArray;
+@property (nonatomic, strong) NSMutableArray *sixHourForecastArray;
 
 @end
 
@@ -43,17 +45,6 @@
         // Custom initialization
     }
     return self;
-}
-
-- (void)locationSuccess
-{
-    [self startRequest];
-}
-
-- (void)startRequest
-{
-    [self getCurWeather];
-    [self getForecast];
 }
 
 - (void)viewDidLoad
@@ -83,7 +74,7 @@
     __weak GwRootViewController *weakSelf = self;
     [_mainTable addPullToRefreshWithActionHandler:^{
         
-        if (CURLOCATION == nil) {
+        if (LOCATION == nil) {
             
         }else{
             [weakSelf startRequest];
@@ -134,8 +125,19 @@
         }
         
         return cell;
+    }else  if (indexPath.row > 0 && indexPath.row < 9){
+        static NSString *identify = @"ForcastSix";
+        GwSixTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identify];
+        if (cell == nil) {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"GwSixTableViewCell" owner:nil options:nil] lastObject];
+            [cell setBackgroundColor:[UIColor clearColor]];
+        }
+        
+        [self cofigCell:cell indexPath:indexPath];
+    
+        return cell;
     }else{
-        static NSString *identify = @"cell";
+        static NSString *identify = @"norlmal";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identify];
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identify];
@@ -145,24 +147,24 @@
     }
 }
 
+#pragma mark -- scrollview delegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-   }
+   
+}
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
 {
     CGFloat offset = MAX(scrollView.contentOffset.y, 0);
     CGFloat hight = scrollView.bounds.size.height;
     CGFloat percent = MIN(offset / hight, 1);
-    [_bgImage setImageToBlur:[UIImage imageNamed:@"bg"] blurRadius:percent completionBlock:^{
-        
-    }];
-
+//    [_bgImage setImageToBlur:[UIImage imageNamed:@"bg"] blurRadius:percent completionBlock:^{
+//        
+//    }];
 }
 
-/**
- *  配置blcok
- */
+
+#pragma mark -- 配置cell blcok
 - (void)configBlock
 {
     self.cellBlock = ^(id data,id cell){
@@ -173,7 +175,7 @@
             GwTempModel *temp = item.temp;
         
             GwMainCellModel *model = [[GwMainCellModel alloc] init];
-            model.cityName = CURLOCATION;
+            model.cityName = LOCATION;
             model.curStatu = weather.description;
             model.curTempreture = temp.day;
             model.statuImgName = weather.icon;
@@ -188,7 +190,7 @@
             GwMain *main = item.main;
             
             GwMainCellModel *model = [[GwMainCellModel alloc] init];
-            model.cityName = CURLOCATION;
+            model.cityName = LOCATION;
             model.curStatu = weather.description;
             model.curTempreture = [NSString stringWithFormat:@"%ld",(long)main.temp];
             model.statuImgName = weather.icon;
@@ -204,7 +206,32 @@
     };
 }
 
-- (void)getForecast
+//
+- (void)cofigCell:(GwSixTableViewCell *)cell indexPath:(NSIndexPath *)indexPath
+{
+//    NSString stringWithFormat:@"%0"
+    [cell.tempretureLabel setText:[self.sixHourForecastArray[indexPath.row - 1] objectForKey:@"temp"]];
+    [cell.statuImage setGwImageWithUrl:[NSString stringWithFormat:@"%@/%@",WEAHTER_STATU_IMAGE_URL,[self.sixHourForecastArray[indexPath.row - 1] objectForKey:@"icon"]]
+                         BaseImageName:nil
+                        IndicatorStyle:UIActivityIndicatorViewStyleGray];
+}
+
+
+#pragma mark -- location delegate
+- (void)locationSuccess
+{
+    [self startRequest];
+}
+
+#pragma mark -- load weather info
+- (void)startRequest
+{
+    [self curWeather];
+    [self forcastSixHour];
+    [self forecastDayliy];
+}
+
+- (void)forecastDayliy
 {
      __weak GwRootViewController *weakSelf = self;
 
@@ -221,16 +248,15 @@
         
         [weakSelf completeCacu];
         
-    } cityName:CURLOCATION];
+    } cityName:LOCATION];
 }
 
 
-- (void)getCurWeather
+- (void)curWeather
 {
     __weak GwRootViewController *weakSelf = self;
     
     GwWeatherBi *bi = [[GwWeatherBi alloc] init];
-    
     
     [bi getCurWeather:^(id callBackData) {
         
@@ -242,14 +268,31 @@
         
          [weakSelf completeCacu];
         
-    } cityName:CURLOCATION];
+    } cityName:LOCATION];
+}
 
+- (void)forcastSixHour
+{
+    __weak GwRootViewController *weakSelf = self;
+    
+    GwWeatherBi *bi = [[GwWeatherBi alloc] init];
+    
+    [bi getForcastSixHour:^(id callBackData) {
+        
+                self.sixHourForecastArray = [NSMutableArray arrayWithArray:callBackData];
+                [weakSelf completeCacu];
+        }
+                      fail:^(id errorMsg) {
+                          [weakSelf completeCacu];
+        }
+                      lon:[[NSUserDefaults standardUserDefaults] objectForKey:LONGITU]
+                      lat:[[NSUserDefaults standardUserDefaults] objectForKey:LATITU]];
 }
 
 - (void)completeCacu
 {
     _requestCount++;
-    if (_requestCount == 1) {
+    if (_requestCount == 2) {
         _requestCount = 0;
         
         [_mainTable.pullToRefreshView stopAnimating];

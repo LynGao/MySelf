@@ -23,4 +23,5 @@
 + (GwLocationManager *)shareLocationManger;
 
 - (void)startLocation;
+
 @end

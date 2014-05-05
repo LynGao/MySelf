@@ -70,6 +70,11 @@
     [_humidityLabel setTextColor:[UIColor whiteColor]];
     _humidityLabel.font = [UIFont boldSystemFontOfSize:13];
     
+    _windLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    _windLabel.backgroundColor = [UIColor clearColor];
+    [_windLabel setTextColor:[UIColor whiteColor]];
+    _windLabel.font = [UIFont boldSystemFontOfSize:13];
+    
     _stateImage = [[UIImageView alloc] initWithFrame:CGRectZero];
     
     _tempView = [[GwTempView alloc] initWithFrame:CGRectZero];
@@ -125,7 +130,7 @@
     
     //humidity
     [_humidityLabel setFrame:CGRectMake(_todayLowestLable.frame.origin.x - 60, _todayLowestLable.frame.origin.y, 60, 21)];
-    [_humidityLabel setText:[NSString stringWithFormat:@"湿度:%d",_model.humidity]];
+    [_humidityLabel setText:[NSString stringWithFormat:@"湿度:%ld",(long)_model.humidity]];
     
 }
 @end

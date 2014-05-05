@@ -11,7 +11,7 @@
 @interface GwMain : GwBaseModel
 
 @property (nonatomic, assign) NSInteger humidity;
-@property (nonatomic, assign) NSInteger pressure ;
+@property (nonatomic, assign) NSInteger pressure;
 @property (nonatomic, assign) NSInteger temp;
 @property (nonatomic, assign) float temp_max;
 @property (nonatomic, assign) float temp_min;

@@ -20,16 +20,46 @@
 
 @implementation GwWeatherBi
 
-- (void)curWeatherRequest:(NSDictionary *)parameter
+- (void)cruSixHourRequest:(NSDictionary *)parameter
 {
     
-//     NSDictionary *param1 = @{@"q":@"guangzhou",@"mode":@"json",@"lang":@"zh_cn",@"units":@"metric"};
-    
+    [[AFHTTPRequestOperationManager manager] GET:ROOT_FORECAST_SIXHOUR_URL
+                                      parameters:parameter
+                                         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                             
+                                             NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:responseObject];
+                                             GWLog(@"cruSixHourRequest = %@",responseObject);
+                                             NSArray *forecastList = [dict objectForKey:@"list"];
+                                             NSMutableArray *resultArray = [NSMutableArray arrayWithCapacity:forecastList.count];
+                                             
+                                             if (forecastList.count > 0) {
+                                                 for (NSDictionary *dict in forecastList) {
+                                                     NSDictionary *main = [dict objectForKey:@"main"];
+                                                     NSDictionary *weather = [[dict objectForKey:@"weather"] objectAtIndex:0];
+                                                     NSDictionary *result = @{@"temp":[NSString stringWithFormat:@"%@",[main objectForKey:@"temp"]],@"icon":[weather objectForKey:@"icon"],@"dt_txt":[dict objectForKey:@"dt_txt"]};
+                                                     
+                                                     [resultArray addObject:result];
+                                                 }
+                                                 self.finishBlock(resultArray);
+                                                 
+                                             }else{
+                                                 self.finishBlock(REQUEST_FAIL);
+                                             }
+
+                                         }
+                                         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                             GWLog(@"error %@",error);
+                                             self.failBlock([error description]);
+                                         }];
+}
+
+- (void)curWeatherRequest:(NSDictionary *)parameter
+{
+
     [[AFHTTPRequestOperationManager manager] GET:ROOT_CURWEATHER_URL
                                       parameters:parameter
                                          success:^(AFHTTPRequestOperation *operation, id responseObject) {
 //                                             GWLog(@"cur weather obj %@ %@",[responseObject class],responseObject);
-                                             
                                              NSDictionary *resultDict = (NSDictionary *)responseObject;
                                              
                                              NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:resultDict];
@@ -40,33 +70,11 @@
                                              
                                              [dict setObject:mutaRanindict forKey:@"rain"];
                                              
-                                             GWLog(@"mutaRanindict = %@",dict);
+//                                             GWLog(@"curWeatherRequest = %@",dict);
                                              
                                              GwCurWeatherItem *curWeather = [[GwCurWeatherItem alloc] initWithDictionary:dict];
                                              
                                              self.finishBlock(curWeather);
-                                             
-//                                             GwRain *rain = curWeather.rain;
-//                                             NSLog(@"rain -- %ld",rain.all);
-//                                             NSLog(@"rain -- %ld",rain._3h);
-                                             
-//                                             GwWeather *weather = curWeather.weather[0];
-//                                             NSLog(@"---- %@",weather.description);
-//                                             NSLog(@"---- %@",weather.icon);
-//                                             NSLog(@"---- %@",weather.main);
-//                                             NSLog(@"---- %@",weather.objectId);
-//                                             
-//                                             GwCloud *cloud = curWeather.clouds;
-//                                             NSLog(@"---- %d",cloud.all);
-//                                             
-//                                             GwMain *main = curWeather.main;
-//                                             NSLog(@"---- %ld",(long)main.humidity);
-//                                             NSLog(@"---- %ld",main.pressure);
-//                                             NSLog(@"---- %ld",main.temp);
-//                                             NSLog(@"---- %@",main.temp_max);
-//                                             NSLog(@"---- %@",main.temp_min);
-                                             
-                                             
                                          }
                                          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                              GWLog(@"error %@",error);
@@ -80,7 +88,7 @@
     [[AFHTTPRequestOperationManager manager] GET:ROOT_FORECAST_URL
                                       parameters:parameter
                                          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//                                             GWLog(@"rsp obj %@ %@",[responseObject class],responseObject);
+//                                             GWLog(@"forecastRequest ----- %@ %@",[responseObject class],responseObject);
                                              
                                              NSDictionary *resultDict = (NSDictionary *)responseObject;
                                              NSArray *forecastList = [resultDict objectForKey:@"list"];
@@ -92,24 +100,7 @@
                                                      [resultArray addObject:item];
                                                  }
                                                  self.finishBlock(resultArray);
-                                            
-//                                                 NSLog(@"tiem --- %@",item.clouds);
-//                                                 NSLog(@"tiem --- %@",item.deg);
-//                                                 NSLog(@"tiem --- %d",item.dt);
-//                                                 NSLog(@"tiem --- %d",item.humidity);
-//                                                 NSLog(@"tiem --- %@",item.pressure);
-//                                                 NSLog(@"tiem --- %@",item.speed);
-//                                               
-//                                                
-//                                                 GwWeather *w = [item.weather objectAtIndex:0];
-//                                                 NSLog(@"count --- %@",[w icon]);
-//                                                 NSLog(@"count --- %@",[w description]);
-//                                                 NSLog(@"objectId --- %@",[w objectId]);
-//                                                 NSLog(@"count --- %@",[w main]);
-//                                                 
-//                                                 GwTempModel *temp = item.temp;
-//                                                 NSLog(@"temp --- %@",[temp day]);
-                                                 
+
                                              }else{
                                                  self.finishBlock(REQUEST_FAIL);
                                              }
@@ -127,7 +118,7 @@
 {
     self.finishBlock = successBlock;
     self.failBlock = failBlock;
-    NSDictionary *parameter = [GwUtil parameterCityName:cityName];
+    NSDictionary *parameter = [GwUtil parameterCityName:cityName cnt:7];
     [self forecastRequest:parameter];
 }
 
@@ -138,7 +129,7 @@
 {
     self.finishBlock = successBlock;
     self.failBlock = failBlock;
-    NSDictionary *parameter = [GwUtil parameterCityID:cityId];
+    NSDictionary *parameter = [GwUtil parameterCityID:cityId cnt:7];
     [self forecastRequest:parameter];
 }
 
@@ -149,7 +140,7 @@
 {
     self.finishBlock = successBlock;
     self.failBlock = failBlock;
-    NSDictionary *parameter = [GwUtil parameterCityCoordinats:lon lat:lat];
+    NSDictionary *parameter = [GwUtil parameterCityCoordinats:lon lat:lat cnt:7];
     [self forecastRequest:parameter];
 }
 
@@ -159,7 +150,7 @@
 {
     self.finishBlock = successBlock;
     self.failBlock = failBlock;
-    NSDictionary *parameter = [GwUtil parameterCityID:cityId];
+    NSDictionary *parameter = [GwUtil parameterCityID:cityId cnt:0];
     [self curWeatherRequest:parameter];
 }
 
@@ -168,7 +159,7 @@
 {
     self.finishBlock = successBlock;
     self.failBlock = failBlock;
-    NSDictionary *parameter = [GwUtil parameterCityName:cityName];
+    NSDictionary *parameter = [GwUtil parameterCityName:cityName cnt:0];
     [self curWeatherRequest:parameter];
 }
 
@@ -177,7 +168,16 @@
 {
     self.finishBlock = successBlock;
     self.failBlock = failBlock;
-    NSDictionary *parameter = [GwUtil parameterCityCoordinats:lon lat:lat];
+    NSDictionary *parameter = [GwUtil parameterCityCoordinats:lon lat:lat cnt:0];
     [self curWeatherRequest:parameter];
+}
+
+
+- (void)getForcastSixHour:(GetDataFinish)successBlock fail:(GetDataFail)failBlock lon:(NSString *)lon lat:(NSString *)lat
+{
+    self.finishBlock = successBlock;
+    self.failBlock = failBlock;
+    NSDictionary *parameter = [GwUtil parameterCityCoordinats:lon.floatValue lat:lat.floatValue cnt:1];
+    [self cruSixHourRequest:parameter];
 }
 @end

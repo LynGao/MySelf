@@ -10,8 +10,10 @@
 
 @interface GwWind : GwBaseModel
 
-@property (nonatomic, assign) NSInteger deg;
-@property (nonatomic, assign) NSInteger speed;
+//@property (nonatomic, assign) NSInteger deg;
+//@property (nonatomic, assign) NSInteger speed;
+@property (nonatomic, strong) NSString *deg;
+@property (nonatomic, strong) NSString *speed;
 @property (nonatomic, assign) NSInteger var_beg;
 @property (nonatomic, assign) NSInteger var_end;
 @end

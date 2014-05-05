@@ -24,7 +24,8 @@
 @property (nonatomic, strong) UILabel *cityName;
 @property (nonatomic, strong) UILabel *timeLabel;
 
-@property (nonatomic, strong) UILabel *humidityLabel;//湿度
+@property (nonatomic, strong) UILabel *humidityLabel;//湿
+@property (nonatomic, strong) UILabel *windLabel;//
 
 
 

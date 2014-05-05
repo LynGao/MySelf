@@ -23,7 +23,7 @@
  *
  *  @return nsdict
  */
-+ (NSDictionary *)parameterCityName:(NSString *)cityName;
++ (NSDictionary *)parameterCityName:(NSString *)cityName cnt:(NSInteger)cnt;
 
 /**
  *  组装Get方法参数
@@ -32,7 +32,7 @@
  *
  *  @return nsdict
  */
-+ (NSDictionary *)parameterCityID:(NSInteger)cityId;
++ (NSDictionary *)parameterCityID:(NSInteger)cityId cnt:(NSInteger)cnt;
 
 /**
  *  组装Get方法参数
@@ -43,7 +43,7 @@
  *
  *  @return nsdict
  */
-+ (NSDictionary *)parameterCityCoordinats:(float)lon lat:(float)lat;
++ (NSDictionary *)parameterCityCoordinats:(float)lon lat:(float)lat cnt:(NSInteger)cnt;
 
 
 /** ****************** Common Util ******************* **/

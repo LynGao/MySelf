@@ -19,7 +19,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-//    [[NSUserDefaults standardUserDefaults] setObject:@"北京市" forKey:CURPLACE];
+//    [[NSUserDefaults standardUserDefaults] setObject:@"shenzhen" forKey:CURPLACE];
     
     [[GwLocationManager shareLocationManger] setDelegate:self];
     [[GwLocationManager shareLocationManger] startLocation];
@@ -64,8 +64,7 @@
 - (void)locationSuccess:(NSString *)city
 {
     if (city) {
-        [[NSUserDefaults standardUserDefaults] setObject:city forKey:CURPLACE];
-        
+   
         [[NSNotificationCenter defaultCenter] postNotificationName:LOCATION_NOTIF_NAME object:nil];
     }
     
