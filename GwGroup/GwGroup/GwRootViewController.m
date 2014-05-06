@@ -19,6 +19,7 @@
 #import "SVPullToRefresh.h"
 #import "GwSixTableViewCell.h"
 #import "UIImageView+GwImageView.h"
+#import "GwDailyTableViewCell.h"
 
 @interface GwRootViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -53,8 +54,6 @@
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(locationSuccess) name:LOCATION_NOTIF_NAME object:nil];
-    
- 
 
     [self configBlock];
     
@@ -74,13 +73,9 @@
     __weak GwRootViewController *weakSelf = self;
     [_mainTable addPullToRefreshWithActionHandler:^{
         
-        if (LOCATION == nil) {
-            
-        }else{
+        if (LOCATION != nil) {
             [weakSelf startRequest];
         }
-        
-        
     }];
     
     [_mainTable triggerPullToRefresh];
@@ -133,16 +128,18 @@
             [cell setBackgroundColor:[UIColor clearColor]];
         }
         
-        [self cofigCell:cell indexPath:indexPath];
+        [self configSixHourCell:cell indexPath:indexPath];
     
         return cell;
     }else{
-        static NSString *identify = @"norlmal";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identify];
+        static NSString *identify = @"DaliyCell";
+        GwDailyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identify];
         if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identify];
+             cell = [[[NSBundle mainBundle] loadNibNamed:@"GwDailyTableViewCell" owner:nil options:nil] lastObject];
             [cell setBackgroundColor:[UIColor clearColor]];
         }
+        
+        [self configWeekCell:cell indexPath:indexPath];
         return cell;
     }
 }
@@ -207,13 +204,35 @@
 }
 
 //
-- (void)cofigCell:(GwSixTableViewCell *)cell indexPath:(NSIndexPath *)indexPath
+- (void)configSixHourCell:(GwSixTableViewCell *)cell indexPath:(NSIndexPath *)indexPath
 {
-//    NSString stringWithFormat:@"%0"
-    [cell.tempretureLabel setText:[self.sixHourForecastArray[indexPath.row - 1] objectForKey:@"temp"]];
+    NSString *dt = [self.sixHourForecastArray[indexPath.row - 1] objectForKey:@"dt_txt"];
+    [cell.descLabel setText:[self hanleDtText:dt]];
+    
+    [cell.tempretureLabel setText:[NSString stringWithFormat:@"%@℃",[self.sixHourForecastArray[indexPath.row - 1] objectForKey:@"temp"]]];
+
     [cell.statuImage setGwImageWithUrl:[NSString stringWithFormat:@"%@/%@",WEAHTER_STATU_IMAGE_URL,[self.sixHourForecastArray[indexPath.row - 1] objectForKey:@"icon"]]
                          BaseImageName:nil
                         IndicatorStyle:UIActivityIndicatorViewStyleGray];
+}
+
+- (void)configWeekCell:(GwDailyTableViewCell *)cell indexPath:(NSIndexPath *)indextPath
+{
+    NSInteger index = indextPath.row - 8 - 1;
+    GWLog(@"index - %d",index);
+    if (index < self.forecastArray.count) {
+        GwForecastWeatherItem *item = self.forecastArray[index];
+        GwWeather *w = [item.weather objectAtIndex:0];
+        [cell.statuLabel setText:w.description];
+        
+        [cell.weekDay setText:[GwUtil formatGMT:item.dt]];
+        
+        [cell.icon setGwImageWithUrl:[NSString stringWithFormat:@"%@/%@",WEAHTER_STATU_IMAGE_URL,w.icon]
+                             BaseImageName:nil
+                            IndicatorStyle:UIActivityIndicatorViewStyleGray];
+        
+        [cell.tempLabel setText:[NSString stringWithFormat:@"%@℃",item.temp.day]];
+    }
 }
 
 
@@ -301,6 +320,23 @@
         
         return;
     }
+}
+
+#pragma mark -- util methos
+- (NSString *)hanleDtText:(NSString *)date
+{
+    NSArray *datas = [date componentsSeparatedByString:@" "];
+    if (datas.count > 0) {
+        GWLog(@"hours --- %@",datas[1]);
+        NSString *hours = datas[1];
+        if (hours.integerValue < 12) {
+            return [NSString stringWithFormat:@"上午:%@",[hours substringToIndex:2]];
+        }else{
+            return [NSString stringWithFormat:@"下午:%@",[hours substringToIndex:2]];
+        }
         
+    }
+    
+    return date;
 }
 @end

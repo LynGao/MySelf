@@ -92,7 +92,59 @@
     [formatter setDateFormat:regula];
     
     return [formatter stringFromDate:confromTimesp];
-
 }
+
+//add
+//初始化日期comp
+-(NSDateComponents *)getDateComponents:(NSDate *)date
+{
+    NSCalendar *calendar=[NSCalendar currentCalendar];
+    unsigned unitFlags=NSDayCalendarUnit | NSYearCalendarUnit | NSMonthCalendarUnit | NSWeekdayCalendarUnit;
+    NSDateComponents *components=[calendar components:unitFlags fromDate:date];
+    return components;
+}
+
+//获取年份
+-(NSInteger)getYear:(NSDate *)date
+{
+    return [[self getDateComponents:date] year];
+}
+
+//获取月份
+-(NSInteger)getMonth:(NSDate *)date
+{
+    return [[self getDateComponents:date] month];
+}
+
+//获取日子
+-(NSInteger)getDay:(NSDate *)date
+{
+    return [[self getDateComponents:date] day];
+}
+
+- (NSInteger)weekDay:(NSDate *)date
+{
+    return [[self getDateComponents:date] weekOfMonth];
+}
+
+//获取1个月的天数。
+-(NSInteger)getDaysNum:(NSDate *)date
+{
+    NSCalendar *cal=[NSCalendar currentCalendar];
+    NSRange range =[cal rangeOfUnit:NSDayCalendarUnit inUnit:NSMonthCalendarUnit forDate:date];
+    NSInteger numberOfDaysInMonth = range.length;
+    return numberOfDaysInMonth;
+}
+
+//初始化日期格式化
+-(NSDateFormatter *)getFormatter
+{
+    NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
+    [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
+    [formatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    return formatter;
+}
+
 
 @end

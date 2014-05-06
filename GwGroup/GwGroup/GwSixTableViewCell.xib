@@ -18,15 +18,15 @@
                         <rect key="frame" x="20" y="0.0" width="50" height="50"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </imageView>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XPr-18-FLf">
-                        <rect key="frame" x="84" y="0.0" width="85" height="49"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5rJ-vF-qqX">
+                        <rect key="frame" x="197" y="0.0" width="103" height="49"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5rJ-vF-qqX">
-                        <rect key="frame" x="258" y="0.0" width="42" height="49"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="I4M-LY-p49">
+                        <rect key="frame" x="78" y="0.0" width="76" height="49"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -37,7 +37,7 @@
             <connections>
                 <outlet property="descLabel" destination="5rJ-vF-qqX" id="dUZ-fz-iuM"/>
                 <outlet property="statuImage" destination="kMc-lI-qOv" id="PI2-Kx-Xig"/>
-                <outlet property="tempretureLabel" destination="XPr-18-FLf" id="LgN-Vq-aPt"/>
+                <outlet property="tempretureLabel" destination="I4M-LY-p49" id="Yho-Xn-uEA"/>
             </connections>
         </tableViewCell>
     </objects>

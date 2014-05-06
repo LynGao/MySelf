@@ -18,7 +18,7 @@
 
 @implementation GwTableDataSource
 
-#pragma mark -- self
+#pragma mark --
 
 - (id)initWithData:(NSMutableArray *)array
          headerTitle:(NSMutableArray *)header
@@ -50,7 +50,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.indentify];
     if (!cell) {
         if (_cellClassName) {

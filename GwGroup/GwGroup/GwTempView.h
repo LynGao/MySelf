@@ -12,7 +12,10 @@
 
 @property (nonatomic,assign) int temp;
 
-- (id)initWithFrame:(CGRect)frame tempreture:(int)temp bigStu:(BOOL)flag;
+//@property (nonatomic,assign) int tempSize;
+//@property (nonatomic,assign) int zeroSize;
 
-- (void)refreshView;
+- (id)initWithFrame:(CGRect)frame tempSize:(int)tempSize zeroSize:(int)zeroSize;
+
+- (void)refreshView:(int)tempSize zeroSize:(int)zeroSize;
 @end

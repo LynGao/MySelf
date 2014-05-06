@@ -24,7 +24,8 @@
     [[GwLocationManager shareLocationManger] setDelegate:self];
     [[GwLocationManager shareLocationManger] startLocation];
 
-    
+    NSString *nibName = @"GwRootViewController";
+  
     GwRootViewController *root = [[GwRootViewController alloc] init];
     self.window.rootViewController = root;
     self.window.backgroundColor = [UIColor whiteColor];

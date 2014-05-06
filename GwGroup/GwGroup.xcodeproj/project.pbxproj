@@ -50,6 +50,9 @@
 		CC20679C18F3F244009E25E0 /* Jastor.m in Sources */ = {isa = PBXBuildFile; fileRef = CC20679918F3F244009E25E0 /* Jastor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CC20679D18F3F244009E25E0 /* JastorRuntimeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CC20679B18F3F244009E25E0 /* JastorRuntimeHelper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CC2067A118F3FE11009E25E0 /* GwForecastWeatherItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2067A018F3FE11009E25E0 /* GwForecastWeatherItem.m */; };
+		CC21CE691918BA980044F51A /* GwRootViewController_5.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC21CE681918BA980044F51A /* GwRootViewController_5.xib */; };
+		CC21CE6F1918BFF30044F51A /* GwDailyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC21CE6D1918BFF30044F51A /* GwDailyTableViewCell.m */; };
+		CC21CE701918BFF30044F51A /* GwDailyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC21CE6E1918BFF30044F51A /* GwDailyTableViewCell.xib */; };
 		CC2D24F518C86D3300E7F545 /* 广东.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CC2D24F418C86D3300E7F545 /* 广东.rtf */; };
 		CC2D257918C86E7400E7F545 /* libbaidumapapi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2D254B18C86E7400E7F545 /* libbaidumapapi.a */; };
 		CC2D257A18C86E7400E7F545 /* libbaidumapapi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2D257618C86E7400E7F545 /* libbaidumapapi.a */; };
@@ -179,6 +182,10 @@
 		CC20679B18F3F244009E25E0 /* JastorRuntimeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JastorRuntimeHelper.m; sourceTree = "<group>"; };
 		CC20679F18F3FE11009E25E0 /* GwForecastWeatherItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwForecastWeatherItem.h; sourceTree = "<group>"; };
 		CC2067A018F3FE11009E25E0 /* GwForecastWeatherItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwForecastWeatherItem.m; sourceTree = "<group>"; };
+		CC21CE681918BA980044F51A /* GwRootViewController_5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GwRootViewController_5.xib; sourceTree = "<group>"; };
+		CC21CE6C1918BFF30044F51A /* GwDailyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwDailyTableViewCell.h; sourceTree = "<group>"; };
+		CC21CE6D1918BFF30044F51A /* GwDailyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwDailyTableViewCell.m; sourceTree = "<group>"; };
+		CC21CE6E1918BFF30044F51A /* GwDailyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GwDailyTableViewCell.xib; sourceTree = "<group>"; };
 		CC2D24F418C86D3300E7F545 /* 广东.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "广东.rtf"; sourceTree = "<group>"; };
 		CC2D24F818C86E7400E7F545 /* BMapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMapKit.h; sourceTree = "<group>"; };
 		CC2D24F918C86E7400E7F545 /* BMKActionPaopaoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKActionPaopaoView.h; sourceTree = "<group>"; };
@@ -456,6 +463,7 @@
 				CC46ECCA18ED4323008DA113 /* GwRootViewController.h */,
 				CC46ECCB18ED4323008DA113 /* GwRootViewController.m */,
 				CC46ECCC18ED4323008DA113 /* GwRootViewController.xib */,
+				CC21CE681918BA980044F51A /* GwRootViewController_5.xib */,
 				CC0D368118838A5C007798CC /* GwBaseViewController.h */,
 				CC0D368218838A5C007798CC /* GwBaseViewController.m */,
 				CC1A4DDF1901296300F3A07D /* Views */,
@@ -547,9 +555,9 @@
 		CC0D36B118838C84007798CC /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				CC2DB07218EAA73C0099170D /* TableDataSource */,
 				CC0D36B218838C92007798CC /* GwUtil.h */,
 				CC0D36B318838C92007798CC /* GwUtil.m */,
+				CC2DB07218EAA73C0099170D /* TableDataSource */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -589,6 +597,7 @@
 		CC1A4DDF1901296300F3A07D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CC21CE6B1918BFD00044F51A /* Daily */,
 				CC3B34D81917942F00B2B8BB /* ForcastSix */,
 				CC13852218EBB0F400A9FEFB /* GwStateImage.h */,
 				CC13852318EBB0F400A9FEFB /* GwStateImage.m */,
@@ -635,6 +644,16 @@
 				CC1A4DD91901099100F3A07D /* GwRain.m */,
 			);
 			name = WeatherModel;
+			sourceTree = "<group>";
+		};
+		CC21CE6B1918BFD00044F51A /* Daily */ = {
+			isa = PBXGroup;
+			children = (
+				CC21CE6C1918BFF30044F51A /* GwDailyTableViewCell.h */,
+				CC21CE6D1918BFF30044F51A /* GwDailyTableViewCell.m */,
+				CC21CE6E1918BFF30044F51A /* GwDailyTableViewCell.xib */,
+			);
+			name = Daily;
 			sourceTree = "<group>";
 		};
 		CC2D24F618C86E7400E7F545 /* BaiduMap_iOSSDK_v2.1.1_Lib */ = {
@@ -1074,6 +1093,8 @@
 				CC2D24F518C86D3300E7F545 /* 广东.rtf in Resources */,
 				CC3B34DD1917945800B2B8BB /* GwSixTableViewCell.xib in Resources */,
 				CC0D365D18838A02007798CC /* InfoPlist.strings in Resources */,
+				CC21CE701918BFF30044F51A /* GwDailyTableViewCell.xib in Resources */,
+				CC21CE691918BA980044F51A /* GwRootViewController_5.xib in Resources */,
 				CC0D366518838A02007798CC /* Images.xcassets in Resources */,
 				CC2D257B18C86E7400E7F545 /* mapapi.bundle in Resources */,
 				CC2D257C18C86E7400E7F545 /* readme.txt in Resources */,
@@ -1126,6 +1147,7 @@
 				CC46ECC718ED0722008DA113 /* UIImage+ImageEffects.m in Sources */,
 				CC4D32EE190664D300ADB8AB /* GwDownloader.m in Sources */,
 				CC2DB07A18EAB5470099170D /* GwMainTableViewCell.m in Sources */,
+				CC21CE6F1918BFF30044F51A /* GwDailyTableViewCell.m in Sources */,
 				CC3D218D188FC50600BE1667 /* GwCityOp.m in Sources */,
 				CC1A4DCE1900FE1600F3A07D /* GwCurWeatherItem.m in Sources */,
 				CC4A3BD418F4E3920044DC77 /* GwBaseBi.m in Sources */,

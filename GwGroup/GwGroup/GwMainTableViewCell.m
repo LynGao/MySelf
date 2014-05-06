@@ -77,8 +77,10 @@
     
     _stateImage = [[UIImageView alloc] initWithFrame:CGRectZero];
     
-    _tempView = [[GwTempView alloc] initWithFrame:CGRectZero];
-    
+    _tempView = [[GwTempView alloc] initWithFrame:CGRectZero
+                                         tempSize:80
+                                         zeroSize:20];
+
     [self.contentView addSubview:_cityName];
     [self.contentView addSubview:_curStatuLable];
     [self.contentView addSubview:_curTempretureLable];
@@ -93,13 +95,12 @@
 - (void)layoutSubviews
 {
     //state
-    UIImage *image = [UIImage imageNamed:@"weather-clear"];
-    CGSize imgSize = image.size;
-    CGRect rect = CGRectMake((self.frame.size.width - imgSize.width) / 2 + 60, self.frame.size.height - 150, imgSize.width, imgSize.height);
+    CGRect rect = CGRectMake((self.frame.size.width - 50) / 2 + 60, self.frame.size.height - 150, 50, 50);
     [_stateImage setGwImageWithUrl:[NSString stringWithFormat:@"%@/%@",WEAHTER_STATU_IMAGE_URL,_model.statuImgName]
                      BaseImageName:@"weather-clear"
                     IndicatorStyle:UIActivityIndicatorViewStyleGray];
     [_stateImage setFrame:rect];
+    
     
     //statu
     CGRect stuLabelRect = CGRectMake(_stateImage.frame.size.width + _stateImage.frame.origin.x + 5, rect.origin.y + 10, 100, 21);
@@ -113,7 +114,7 @@
     CGRect tempRect = CGRectMake(rect.origin.x - 5, stuLabelRect.origin.y + stuLabelRect.size.height + 5, 80, 70);
     [_tempView setFrame:tempRect];
     [_tempView setTemp:_model.curTempreture.intValue];
-    [_tempView refreshView];
+    [_tempView refreshView:0 zeroSize:0];
     
     //city
     [_cityName setText:_model.cityName];
