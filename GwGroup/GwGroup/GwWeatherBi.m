@@ -17,6 +17,7 @@
 #import "GwCloud.h"
 #import "GwMain.h"
 #import "GwRain.h"
+#import "GwUtil.h"
 
 @implementation GwWeatherBi
 
@@ -28,7 +29,7 @@
                                          success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                              
                                              NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:responseObject];
-//                                             GWLog(@"cruSixHourRequest = %@",responseObject);
+                                             GWLog(@"cruSixHourRequest = %@",responseObject);
                                              NSArray *forecastList = [dict objectForKey:@"list"];
                                              NSMutableArray *resultArray = [NSMutableArray arrayWithCapacity:forecastList.count];
                                              
@@ -88,7 +89,7 @@
     [[AFHTTPRequestOperationManager manager] GET:ROOT_FORECAST_URL
                                       parameters:parameter
                                          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                             GWLog(@"forecastRequest ----- %@ %@",[responseObject class],responseObject);
+//                                             GWLog(@"forecastRequest ----- %@ %@",[responseObject class],responseObject);
                                              
                                              NSDictionary *resultDict = (NSDictionary *)responseObject;
                                              NSArray *forecastList = [resultDict objectForKey:@"list"];

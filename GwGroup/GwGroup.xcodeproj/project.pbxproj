@@ -41,6 +41,10 @@
 		CC13851F18EBB09800A9FEFB /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = CC13851C18EBB09800A9FEFB /* UIScrollView+SVInfiniteScrolling.m */; };
 		CC13852018EBB09800A9FEFB /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = CC13851E18EBB09800A9FEFB /* UIScrollView+SVPullToRefresh.m */; };
 		CC13852418EBB0F400A9FEFB /* GwStateImage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC13852318EBB0F400A9FEFB /* GwStateImage.m */; };
+		CC16F3A4191B71DC008A01F5 /* PPRevealSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC16F3A3191B71DC008A01F5 /* PPRevealSideViewController.m */; };
+		CC16F3AB191B7353008A01F5 /* GwLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC16F3AA191B7353008A01F5 /* GwLeftViewController.m */; };
+		CC16F3B0191C8070008A01F5 /* GwSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC16F3AF191C8070008A01F5 /* GwSearchViewController.m */; };
+		CC16F3F7191CDACE008A01F5 /* GwSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC16F3F6191CDACE008A01F5 /* GwSearchViewController.xib */; };
 		CC1A4DCE1900FE1600F3A07D /* GwCurWeatherItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1A4DCD1900FE1600F3A07D /* GwCurWeatherItem.m */; };
 		CC1A4DD11900FEB900F3A07D /* GwCoord.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1A4DD01900FEB900F3A07D /* GwCoord.m */; };
 		CC1A4DD41900FF4700F3A07D /* GwCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1A4DD31900FF4700F3A07D /* GwCloud.m */; };
@@ -163,6 +167,13 @@
 		CC13851E18EBB09800A9FEFB /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 		CC13852218EBB0F400A9FEFB /* GwStateImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwStateImage.h; sourceTree = "<group>"; };
 		CC13852318EBB0F400A9FEFB /* GwStateImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwStateImage.m; sourceTree = "<group>"; };
+		CC16F3A2191B71DC008A01F5 /* PPRevealSideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPRevealSideViewController.h; sourceTree = "<group>"; };
+		CC16F3A3191B71DC008A01F5 /* PPRevealSideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPRevealSideViewController.m; sourceTree = "<group>"; };
+		CC16F3A9191B7353008A01F5 /* GwLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwLeftViewController.h; sourceTree = "<group>"; };
+		CC16F3AA191B7353008A01F5 /* GwLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwLeftViewController.m; sourceTree = "<group>"; };
+		CC16F3AE191C8070008A01F5 /* GwSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwSearchViewController.h; sourceTree = "<group>"; };
+		CC16F3AF191C8070008A01F5 /* GwSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwSearchViewController.m; sourceTree = "<group>"; };
+		CC16F3F6191CDACE008A01F5 /* GwSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GwSearchViewController.xib; sourceTree = "<group>"; };
 		CC1A4DCC1900FE1600F3A07D /* GwCurWeatherItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwCurWeatherItem.h; sourceTree = "<group>"; };
 		CC1A4DCD1900FE1600F3A07D /* GwCurWeatherItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwCurWeatherItem.m; sourceTree = "<group>"; };
 		CC1A4DCF1900FEB900F3A07D /* GwCoord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwCoord.h; sourceTree = "<group>"; };
@@ -458,6 +469,9 @@
 		CC0D365818838A02007798CC /* GwGroup */ = {
 			isa = PBXGroup;
 			children = (
+				CC16F3A5191B72D7008A01F5 /* LeftController */,
+				CC16F3A2191B71DC008A01F5 /* PPRevealSideViewController.h */,
+				CC16F3A3191B71DC008A01F5 /* PPRevealSideViewController.m */,
 				CC0D366118838A02007798CC /* GwAppDelegate.h */,
 				CC0D366218838A02007798CC /* GwAppDelegate.m */,
 				CC46ECCA18ED4323008DA113 /* GwRootViewController.h */,
@@ -555,6 +569,7 @@
 		CC0D36B118838C84007798CC /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				CC16F3B1191CAC15008A01F5 /* DB */,
 				CC0D36B218838C92007798CC /* GwUtil.h */,
 				CC0D36B318838C92007798CC /* GwUtil.m */,
 				CC2DB07218EAA73C0099170D /* TableDataSource */,
@@ -583,6 +598,25 @@
 				CC13851E18EBB09800A9FEFB /* UIScrollView+SVPullToRefresh.m */,
 			);
 			path = SVPullToRefresh;
+			sourceTree = "<group>";
+		};
+		CC16F3A5191B72D7008A01F5 /* LeftController */ = {
+			isa = PBXGroup;
+			children = (
+				CC16F3A9191B7353008A01F5 /* GwLeftViewController.h */,
+				CC16F3AA191B7353008A01F5 /* GwLeftViewController.m */,
+				CC16F3AE191C8070008A01F5 /* GwSearchViewController.h */,
+				CC16F3AF191C8070008A01F5 /* GwSearchViewController.m */,
+				CC16F3F6191CDACE008A01F5 /* GwSearchViewController.xib */,
+			);
+			name = LeftController;
+			sourceTree = "<group>";
+		};
+		CC16F3B1191CAC15008A01F5 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DB;
 			sourceTree = "<group>";
 		};
 		CC1A4DDB19011D8400F3A07D /* LocationManger */ = {
@@ -1099,6 +1133,7 @@
 				CC2D257B18C86E7400E7F545 /* mapapi.bundle in Resources */,
 				CC2D257C18C86E7400E7F545 /* readme.txt in Resources */,
 				CC3B0443188E62ED00EBD842 /* Chinaplaces.txt in Resources */,
+				CC16F3F7191CDACE008A01F5 /* GwSearchViewController.xib in Resources */,
 				CC3CC6E218C5D7B9001235B2 /* db.sqlite3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1127,6 +1162,7 @@
 				CC4D32F0190664D300ADB8AB /* ProcessView.m in Sources */,
 				CC0D36B418838C92007798CC /* GwUtil.m in Sources */,
 				CC0D36B818838D91007798CC /* UIViewController+Adapter.m in Sources */,
+				CC16F3A4191B71DC008A01F5 /* PPRevealSideViewController.m in Sources */,
 				CC0D368318838A5C007798CC /* GwBaseViewController.m in Sources */,
 				CC0D369A18838B14007798CC /* AFHTTPRequestOperationManager.m in Sources */,
 				CC4D32F2190664D300ADB8AB /* UIImageView+GwImageView.m in Sources */,
@@ -1140,12 +1176,14 @@
 				CC3D216D188E716500BE1667 /* GwCityCode.m in Sources */,
 				CC0D369D18838B14007798CC /* AFSecurityPolicy.m in Sources */,
 				CC1A4DD71901004200F3A07D /* GwMain.m in Sources */,
+				CC16F3B0191C8070008A01F5 /* GwSearchViewController.m in Sources */,
 				CC4D32EC190664D300ADB8AB /* BaseImageView.m in Sources */,
 				CC2067A118F3FE11009E25E0 /* GwForecastWeatherItem.m in Sources */,
 				CC4A3BDE18F533FB0044DC77 /* GwTempModel.m in Sources */,
 				CC4A3BCD18F4E2CE0044DC77 /* GwWeatherBi.m in Sources */,
 				CC46ECC718ED0722008DA113 /* UIImage+ImageEffects.m in Sources */,
 				CC4D32EE190664D300ADB8AB /* GwDownloader.m in Sources */,
+				CC16F3AB191B7353008A01F5 /* GwLeftViewController.m in Sources */,
 				CC2DB07A18EAB5470099170D /* GwMainTableViewCell.m in Sources */,
 				CC21CE6F1918BFF30044F51A /* GwDailyTableViewCell.m in Sources */,
 				CC3D218D188FC50600BE1667 /* GwCityOp.m in Sources */,

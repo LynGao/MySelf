@@ -82,9 +82,43 @@
     return param;
 }
 
+
+//获取年份
++ (NSInteger)getYear:(NSDate *)date
+{
+    return [[self getDateComponents:date] year];
+}
+
+//获取月份
++ (NSInteger)getMonth:(NSDate *)date
+{
+    return [[self getDateComponents:date] month];
+}
+
+//获取日子
++ (NSInteger)getDay:(NSDate *)date
+{
+    return [[self getDateComponents:date] day];
+}
+
+//获取星期数
++ (NSInteger)weekDay:(NSDate *)date
+{
+    return [[self getDateComponents:date] weekOfMonth];
+}
+
+//获取1个月的天数。
++ (NSInteger)getDaysNum:(NSDate *)date
+{
+    NSCalendar *cal=[NSCalendar currentCalendar];
+    NSRange range =[cal rangeOfUnit:NSDayCalendarUnit inUnit:NSMonthCalendarUnit forDate:date];
+    NSInteger numberOfDaysInMonth = range.length;
+    return numberOfDaysInMonth;
+}
+
 + (NSString *)formatGMT:(NSInteger)gmt
 {
-
+    
     NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:gmt];
     NSString *regula = @"yyyy-MM-dd hh:mm:ss";
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -96,55 +130,73 @@
 
 //add
 //初始化日期comp
--(NSDateComponents *)getDateComponents:(NSDate *)date
++ (NSDateComponents *)getDateComponents:(NSDate *)date
 {
     NSCalendar *calendar=[NSCalendar currentCalendar];
-    unsigned unitFlags=NSDayCalendarUnit | NSYearCalendarUnit | NSMonthCalendarUnit | NSWeekdayCalendarUnit;
+    NSInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
     NSDateComponents *components=[calendar components:unitFlags fromDate:date];
     return components;
 }
 
-//获取年份
--(NSInteger)getYear:(NSDate *)date
-{
-    return [[self getDateComponents:date] year];
-}
-
-//获取月份
--(NSInteger)getMonth:(NSDate *)date
-{
-    return [[self getDateComponents:date] month];
-}
-
-//获取日子
--(NSInteger)getDay:(NSDate *)date
-{
-    return [[self getDateComponents:date] day];
-}
-
-- (NSInteger)weekDay:(NSDate *)date
-{
-    return [[self getDateComponents:date] weekOfMonth];
-}
-
-//获取1个月的天数。
--(NSInteger)getDaysNum:(NSDate *)date
-{
-    NSCalendar *cal=[NSCalendar currentCalendar];
-    NSRange range =[cal rangeOfUnit:NSDayCalendarUnit inUnit:NSMonthCalendarUnit forDate:date];
-    NSInteger numberOfDaysInMonth = range.length;
-    return numberOfDaysInMonth;
-}
-
 //初始化日期格式化
--(NSDateFormatter *)getFormatter
++ (NSDateFormatter *)getFormatter
 {
     NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
-    [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
-    [formatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-    [formatter setDateFormat:@"yyyy-MM-dd"];
+//    [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
+//    [formatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+    [formatter setTimeZone:[NSTimeZone systemTimeZone]];
+    [formatter setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
     return formatter;
 }
 
++ (NSString *)convertWeekDay:(NSString *)dateString
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    NSDate *date = [[self getFormatter] dateFromString:dateString];
+    [formatter setTimeStyle:NSDateFormatterMediumStyle];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *comps = [[NSDateComponents alloc] init];
+    NSInteger unitFlags = NSYearCalendarUnit |
+    NSMonthCalendarUnit |
+    NSDayCalendarUnit |
+    NSWeekdayCalendarUnit |
+    NSHourCalendarUnit |
+    NSMinuteCalendarUnit |
+    NSSecondCalendarUnit;
+    //int week=0;week1是星期天,week7是星期六;
+    
+    comps = [calendar components:unitFlags fromDate:date];
+    GWLog(@"%d",[comps weekday]);
+    NSInteger weekDay = [comps weekday];
+    NSString *result = @"";
+    NSLog(@"weekDay -- %d",weekDay);
+    switch (weekDay) {
+        case 1:
+            result = @"星期日";
+            break;
+        case 2:
+            result = @"星期一";
+            break;
+        case 3:
+            result = @"星期二";
+            break;
+        case 4:
+            result = @"星期三";
+            break;
+        case 5:
+            result = @"星期四";
+            break;
+        case 6:
+            result = @"星期五";
+            break;
+        case 7:
+            result = @"星期六";
+            break;
+        default:
+            break;
+    }
+    
+    return result;
+}
 
 @end

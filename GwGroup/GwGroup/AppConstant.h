@@ -9,6 +9,8 @@
 #ifndef GwGroup_AppConstant_h
 #define GwGroup_AppConstant_h
 
+#define SEARCH @"api.openweathermap.org/data/2.5/find?q=London&units=metric&mode=xml"
+
 #define ROOT_FORECAST_SIXHOUR_URL @"http://api.openweathermap.org/data/2.5/forecast"
 
 #define ROOT_FORECAST_URL @"http://api.openweathermap.org/data/2.5/forecast/daily"

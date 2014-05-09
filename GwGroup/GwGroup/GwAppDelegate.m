@@ -11,12 +11,12 @@
 #import "GwRootViewController.h"
 
 
-
-
 @implementation GwAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
 //    [[NSUserDefaults standardUserDefaults] setObject:@"shenzhen" forKey:CURPLACE];
@@ -25,11 +25,22 @@
     [[GwLocationManager shareLocationManger] startLocation];
 
     NSString *nibName = @"GwRootViewController";
+    if (iPhone5) {
+        nibName = @"GwRootViewController_5";
+    }
   
-    GwRootViewController *root = [[GwRootViewController alloc] init];
-    self.window.rootViewController = root;
+    GwRootViewController *root = [[GwRootViewController alloc] initWithNibName:nibName bundle:nil];
+    self.revealController = [[PPRevealSideViewController alloc] initWithRootViewController:root];
+    
+    [self.revealController setDirectionsToShowBounce:PPRevealSideDirectionNone];
+    [self.revealController setPanInteractionsWhenClosed:PPRevealSideInteractionContentView | PPRevealSideInteractionNavigationBar];
+    self.window.rootViewController = self.revealController;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
     return YES;
 }
 

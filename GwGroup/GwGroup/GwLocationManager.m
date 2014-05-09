@@ -89,6 +89,7 @@ static GwLocationManager *loactionManger = nil;
 
 - (void)storelotitu:(NSString *)lou lat:(NSString *)lat
 {
+    GWLog(@"---- logti %@ %@",lou,lat);
     [[NSUserDefaults standardUserDefaults] setObject:lou forKey:LONGITU];
     [[NSUserDefaults standardUserDefaults] setObject:lat forKey:LATITU];
 }

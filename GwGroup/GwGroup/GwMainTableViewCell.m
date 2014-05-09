@@ -89,6 +89,11 @@
     [self.contentView addSubview:_stateImage];
     [self.contentView addSubview:_tempView];
     [self.contentView addSubview:_humidityLabel];
+    
+    UIButton *setBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [setBtn setFrame:CGRectMake(self.frame.size.width - 25, 30, 60, 20)];
+    [setBtn addTarget:self action:@selector(settingClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.contentView addSubview:setBtn];
 
 }
 
@@ -132,6 +137,11 @@
     //humidity
     [_humidityLabel setFrame:CGRectMake(_todayLowestLable.frame.origin.x - 60, _todayLowestLable.frame.origin.y, 60, 21)];
     [_humidityLabel setText:[NSString stringWithFormat:@"湿度:%ld",(long)_model.humidity]];
+    
+}
+
+- (void)settingClick
+{
     
 }
 @end

@@ -20,6 +20,8 @@
 #import "GwSixTableViewCell.h"
 #import "UIImageView+GwImageView.h"
 #import "GwDailyTableViewCell.h"
+#import "GwLeftViewController.h"
+#import "GwUtil.h"
 
 @interface GwRootViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -31,6 +33,8 @@
     NSMutableDictionary *_curWeatherDict;
     
     __block GwCurWeatherItem *curWeatherItem;
+    
+    GwLeftViewController *_leftController;
 }
 @property (nonatomic, strong) NSMutableArray *forecastArray;
 @property (nonatomic, strong) NSMutableArray *sixHourForecastArray;
@@ -80,7 +84,9 @@
     
     [_mainTable triggerPullToRefresh];
     
-   
+    _leftController = [[GwLeftViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:_leftController];
+    [self.revealSideViewController preloadViewController:nav forSide:PPRevealSideDirectionLeft];
 }
 
 - (void)didReceiveMemoryWarning
@@ -89,24 +95,72 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)shwoLeftController
+{
+    [self.revealSideViewController pushOldViewControllerOnDirection:PPRevealSideDirectionLeft animated:YES];
+}
+
+#pragma mark -- tableview delegate
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 3;
+}
+
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+//{
+//    if (section == 0) {
+//        return 0.0;
+//    }
+//    return 22.0;
+//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
+    if (indexPath.section == 0) {
         return self.view.bounds.size.height;
     }else{
         return 44;
     }
+    
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;
+    if (section == 0) {
+        return 1;
+    }else if (section == 1)
+    {
+        return 8;
+    }else{
+        return 7;
+    }
 }
+
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+//{
+//    CGFloat hight = section == 1 ? 22 : 0;
+//    
+//    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _mainTable.frame.size.width, hight)];
+//    [view setBackgroundColor:[UIColor clearColor]];
+//    if (section == 1) {
+//
+//        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 100, 21)];
+//        [titleLabel setBackgroundColor:[UIColor clearColor]];
+//        [titleLabel setFont:[UIFont fontWithName:@"Times New Roman" size:14]];
+//        [titleLabel setTextColor:[UIColor whiteColor]];
+//        [titleLabel setTextAlignment:NSTextAlignmentLeft];
+//        [titleLabel setText:@"预报"];
+//        
+//        [view addSubview:titleLabel];
+//    }
+//    return view;
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
+    if (indexPath.section == 0) {
         static NSString *identify = @"GwMainTableViewCell";
         GwMainTableViewCell *cell = (GwMainTableViewCell *)[tableView dequeueReusableCellWithIdentifier:identify];
         if (cell == nil) {
@@ -120,7 +174,7 @@
         }
         
         return cell;
-    }else  if (indexPath.row > 0 && indexPath.row < 9){
+    }else if (indexPath.section == 1){
         static NSString *identify = @"ForcastSix";
         GwSixTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identify];
         if (cell == nil) {
@@ -129,19 +183,27 @@
         }
         
         [self configSixHourCell:cell indexPath:indexPath];
-    
+        
         return cell;
+
     }else{
         static NSString *identify = @"DaliyCell";
         GwDailyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identify];
         if (cell == nil) {
-             cell = [[[NSBundle mainBundle] loadNibNamed:@"GwDailyTableViewCell" owner:nil options:nil] lastObject];
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"GwDailyTableViewCell" owner:nil options:nil] lastObject];
             [cell setBackgroundColor:[UIColor clearColor]];
         }
         
         [self configWeekCell:cell indexPath:indexPath];
         return cell;
+
     }
+    
+//    if (indexPath.row == 0) {
+//       
+//    }else  if (indexPath.row > 0 && indexPath.row < 9){
+//           }else{
+//          }
 }
 
 #pragma mark -- scrollview delegate
@@ -152,9 +214,9 @@
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
 {
-    CGFloat offset = MAX(scrollView.contentOffset.y, 0);
-    CGFloat hight = scrollView.bounds.size.height;
-    CGFloat percent = MIN(offset / hight, 1);
+//    CGFloat offset = MAX(scrollView.contentOffset.y, 0);
+//    CGFloat hight = scrollView.bounds.size.height;
+//    CGFloat percent = MIN(offset / hight, 1);
 //    [_bgImage setImageToBlur:[UIImage imageNamed:@"bg"] blurRadius:percent completionBlock:^{
 //        
 //    }];
@@ -206,30 +268,30 @@
 //
 - (void)configSixHourCell:(GwSixTableViewCell *)cell indexPath:(NSIndexPath *)indexPath
 {
-    NSString *dt = [self.sixHourForecastArray[indexPath.row - 1] objectForKey:@"dt_txt"];
+    NSString *dt = [self.sixHourForecastArray[indexPath.row] objectForKey:@"dt_txt"];
     [cell.descLabel setText:[self hanleDtText:dt]];
     
-    [cell.tempretureLabel setText:[NSString stringWithFormat:@"%@℃",[self.sixHourForecastArray[indexPath.row - 1] objectForKey:@"temp"]]];
+    [cell.tempretureLabel setText:[NSString stringWithFormat:@"%@℃",[self.sixHourForecastArray[indexPath.row] objectForKey:@"temp"]]];
 
-    [cell.statuImage setGwImageWithUrl:[NSString stringWithFormat:@"%@/%@",WEAHTER_STATU_IMAGE_URL,[self.sixHourForecastArray[indexPath.row - 1] objectForKey:@"icon"]]
+    [cell.statuImage setGwImageWithUrl:[NSString stringWithFormat:@"%@/%@",WEAHTER_STATU_IMAGE_URL,[self.sixHourForecastArray[indexPath.row] objectForKey:@"icon"]]
                          BaseImageName:nil
                         IndicatorStyle:UIActivityIndicatorViewStyleGray];
 }
 
 - (void)configWeekCell:(GwDailyTableViewCell *)cell indexPath:(NSIndexPath *)indextPath
 {
-    NSInteger index = indextPath.row - 8 - 1;
+    NSInteger index = indextPath.row;
     GWLog(@"index - %d",index);
     if (index < self.forecastArray.count) {
         GwForecastWeatherItem *item = self.forecastArray[index];
         GwWeather *w = [item.weather objectAtIndex:0];
         [cell.statuLabel setText:w.description];
         
-        [cell.weekDay setText:[GwUtil formatGMT:item.dt]];
+        [cell.weekDay setText:[GwUtil convertWeekDay:[GwUtil formatGMT:item.dt]]];
         
         [cell.icon setGwImageWithUrl:[NSString stringWithFormat:@"%@/%@",WEAHTER_STATU_IMAGE_URL,w.icon]
-                             BaseImageName:nil
-                            IndicatorStyle:UIActivityIndicatorViewStyleGray];
+                       BaseImageName:nil
+                      IndicatorStyle:UIActivityIndicatorViewStyleGray];
         
         [cell.tempLabel setText:[NSString stringWithFormat:@"%@℃",item.temp.day]];
     }
@@ -311,7 +373,7 @@
 - (void)completeCacu
 {
     _requestCount++;
-    if (_requestCount == 2) {
+    if (_requestCount == 3) {
         _requestCount = 0;
         
         [_mainTable.pullToRefreshView stopAnimating];

@@ -10,8 +10,6 @@
 
 @interface GwUtil : NSObject
 
-+ (NSString *)formatGMT:(NSInteger)gmt;
-
 + (void)loadWorldId;
 
 + (void)copyDbToCache;
@@ -48,6 +46,8 @@
 
 /** ****************** Common Util ******************* **/
 
++ (NSString *)formatGMT:(NSInteger)gmt;
 
++ (NSString *)convertWeekDay:(NSString *)dateString;
 
 @end
