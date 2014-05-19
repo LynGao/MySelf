@@ -199,4 +199,11 @@
     return result;
 }
 
++ (NSDictionary *)loadPlistFromBundle:(NSString *)fielName type:(NSString *)type
+{
+    NSString *file = [[NSBundle mainBundle] pathForResource:fielName ofType:type];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:file];
+    return dict;
+}
+
 @end

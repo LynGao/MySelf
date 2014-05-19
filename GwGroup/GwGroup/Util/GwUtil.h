@@ -50,4 +50,6 @@
 
 + (NSString *)convertWeekDay:(NSString *)dateString;
 
++ (NSDictionary *)loadPlistFromBundle:(NSString *)fielName type:(NSString *)type;
+
 @end

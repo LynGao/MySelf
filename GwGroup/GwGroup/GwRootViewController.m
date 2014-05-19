@@ -87,6 +87,11 @@
     _leftController = [[GwLeftViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:_leftController];
     [self.revealSideViewController preloadViewController:nav forSide:PPRevealSideDirectionLeft];
+    
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"广东" ofType:@"rtf"];
+    NSDictionary *dict = [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:NULL];
+    GWLog(@"file size %@",dict);
 }
 
 - (void)didReceiveMemoryWarning

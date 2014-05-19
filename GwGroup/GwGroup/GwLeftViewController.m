@@ -30,8 +30,8 @@
 
 - (void)addCity
 {
-//    GwSearchViewController *search = [[GwSearchViewController alloc] init];
-//    [self presentViewController:search animated:YES completion:NULL];
+    GwSearchViewController *search = [[GwSearchViewController alloc] init];
+    [self presentViewController:search animated:YES completion:NULL];
 }
 
 - (void)viewDidLoad

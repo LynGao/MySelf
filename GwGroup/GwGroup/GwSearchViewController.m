@@ -7,6 +7,7 @@
 //
 
 #import "GwSearchViewController.h"
+#import "GwUtil.h"
 
 @interface GwSearchViewController ()<UISearchBarDelegate>
 {
@@ -29,6 +30,7 @@
 {
     [super viewDidLoad];
     [_searchBar setDelegate:self];
+    [self createCityList];
 
 }
 
@@ -36,6 +38,37 @@
 {
     [super didReceiveMemoryWarning];
   
+}
+
+#pragma mark -- city tips
+- (void)createCityList
+{
+    NSDictionary *dict = [GwUtil loadPlistFromBundle:@"CityList" type:@"plist"];
+    NSArray *array = dict[@"City"];
+    GWLog(@"arrat - %@",array);
+    CGFloat y = 20 + 44;
+    int count = 0;
+    for (int i = 0; i < array.count; i++)
+    {
+        if (i % 3 == 0) {
+            y+=10 + 21;
+            count = 0;
+        }else{
+            count++;
+        }
+        CGRect frame = CGRectMake(20 * (count + 1) + (60 * count), y, 60, 21);
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+        [btn setTitle:[array objectAtIndex:i] forState:UIControlStateNormal];
+        [btn setFrame:frame];
+        [btn addTarget:self action:@selector(cityClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:btn];
+
+    }
+}
+
+- (void)cityClick:(UIButton *)btn
+{
+    
 }
 
 #pragma mark -- searchbar

@@ -38,6 +38,7 @@
 		CC0D36AF18838C1F007798CC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0D36AE18838C1F007798CC /* MobileCoreServices.framework */; };
 		CC0D36B418838C92007798CC /* GwUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0D36B318838C92007798CC /* GwUtil.m */; };
 		CC0D36B818838D91007798CC /* UIViewController+Adapter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0D36B718838D91007798CC /* UIViewController+Adapter.m */; };
+		CC133C6B192064C500A61F3A /* CityList.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC133C6A192064C500A61F3A /* CityList.plist */; };
 		CC13851F18EBB09800A9FEFB /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = CC13851C18EBB09800A9FEFB /* UIScrollView+SVInfiniteScrolling.m */; };
 		CC13852018EBB09800A9FEFB /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = CC13851E18EBB09800A9FEFB /* UIScrollView+SVPullToRefresh.m */; };
 		CC13852418EBB0F400A9FEFB /* GwStateImage.m in Sources */ = {isa = PBXBuildFile; fileRef = CC13852318EBB0F400A9FEFB /* GwStateImage.m */; };
@@ -160,6 +161,7 @@
 		CC0D36B518838CBD007798CC /* AppConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConstant.h; sourceTree = "<group>"; };
 		CC0D36B618838D91007798CC /* UIViewController+Adapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Adapter.h"; path = "GwGroup/Util/UIViewController+Adapter.h"; sourceTree = "<group>"; };
 		CC0D36B718838D91007798CC /* UIViewController+Adapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Adapter.m"; path = "GwGroup/Util/UIViewController+Adapter.m"; sourceTree = "<group>"; };
+		CC133C6A192064C500A61F3A /* CityList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CityList.plist; sourceTree = "<group>"; };
 		CC13851A18EBB09800A9FEFB /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
 		CC13851B18EBB09800A9FEFB /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
 		CC13851C18EBB09800A9FEFB /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
@@ -505,6 +507,7 @@
 				CC0D365B18838A02007798CC /* InfoPlist.strings */,
 				CC0D365E18838A02007798CC /* main.m */,
 				CC0D366018838A02007798CC /* GwGroup-Prefix.pch */,
+				CC133C6A192064C500A61F3A /* CityList.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1132,6 +1135,7 @@
 				CC0D366518838A02007798CC /* Images.xcassets in Resources */,
 				CC2D257B18C86E7400E7F545 /* mapapi.bundle in Resources */,
 				CC2D257C18C86E7400E7F545 /* readme.txt in Resources */,
+				CC133C6B192064C500A61F3A /* CityList.plist in Resources */,
 				CC3B0443188E62ED00EBD842 /* Chinaplaces.txt in Resources */,
 				CC16F3F7191CDACE008A01F5 /* GwSearchViewController.xib in Resources */,
 				CC3CC6E218C5D7B9001235B2 /* db.sqlite3 in Resources */,
