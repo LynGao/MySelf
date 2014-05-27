@@ -79,4 +79,7 @@
  */
 - (void)getForcastSixHour:(GetDataFinish)successBlock fail:(GetDataFail)failBlock lon:(NSString *)lon lat:(NSString *)lat;
 
+
+- (void)loadAllRequest:(void (^)(NSDictionary *dict))reult;
+
 @end

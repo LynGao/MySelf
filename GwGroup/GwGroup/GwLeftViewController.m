@@ -31,7 +31,8 @@
 - (void)addCity
 {
     GwSearchViewController *search = [[GwSearchViewController alloc] init];
-    [self presentViewController:search animated:YES completion:NULL];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:search];
+    [self presentViewController:nav animated:YES completion:NULL];
 }
 
 - (void)viewDidLoad

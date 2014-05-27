@@ -23,6 +23,8 @@
 #import "GwLeftViewController.h"
 #import "GwUtil.h"
 
+
+
 @interface GwRootViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     UITableView *_mainTable;
@@ -35,6 +37,9 @@
     __block GwCurWeatherItem *curWeatherItem;
     
     GwLeftViewController *_leftController;
+    
+    dispatch_queue_t _reqeustQueue;
+    dispatch_group_t _groupQueue;
 }
 @property (nonatomic, strong) NSMutableArray *forecastArray;
 @property (nonatomic, strong) NSMutableArray *sixHourForecastArray;
@@ -77,21 +82,21 @@
     __weak GwRootViewController *weakSelf = self;
     [_mainTable addPullToRefreshWithActionHandler:^{
         
-        if (LOCATION != nil) {
+        if (LOCATION != nil ) {
+            
             [weakSelf startRequest];
         }
     }];
-    
-    [_mainTable triggerPullToRefresh];
     
     _leftController = [[GwLeftViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:_leftController];
     [self.revealSideViewController preloadViewController:nav forSide:PPRevealSideDirectionLeft];
     
+    [_mainTable triggerPullToRefresh];
     
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"广东" ofType:@"rtf"];
-    NSDictionary *dict = [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:NULL];
-    GWLog(@"file size %@",dict);
+//    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"广东" ofType:@"rtf"];
+//    NSDictionary *dict = [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:NULL];
+//    GWLog(@"file size %@",dict);
 }
 
 - (void)didReceiveMemoryWarning
@@ -231,6 +236,7 @@
 #pragma mark -- 配置cell blcok
 - (void)configBlock
 {
+    
     self.cellBlock = ^(id data,id cell){
         
         if ([data isKindOfClass:[GwForecastWeatherItem class]]) {
@@ -266,9 +272,12 @@
             [cell setModel:model];
             
           
+          
         }
     };
 }
+
+
 
 //
 - (void)configSixHourCell:(GwSixTableViewCell *)cell indexPath:(NSIndexPath *)indexPath
@@ -312,6 +321,34 @@
 #pragma mark -- load weather info
 - (void)startRequest
 {
+    
+//    if (!_reqeustQueue) {
+//        _reqeustQueue = dispatch_queue_create("com.rqeuset.weather", DISPATCH_QUEUE_SERIAL);
+//    }
+//    
+//    if (!_groupQueue) {
+//        _groupQueue = dispatch_group_create();
+//    }
+//    
+//    dispatch_group_async(_groupQueue, _reqeustQueue, ^{
+//        [self curWeather];
+//    });
+//    
+//    dispatch_group_async(_groupQueue, _reqeustQueue, ^{
+//        [self forcastSixHour];
+//    });
+//    
+//    dispatch_group_async(_groupQueue, _reqeustQueue, ^{
+//       [self forecastDayliy];
+//    });
+    
+//    if (_mainTable.pullToRefreshView.state == SVPullToRefreshStateLoading) {
+//        GwWeatherBi *biz = [[GwWeatherBi alloc] init];
+//        [biz loadAllRequest:^(NSDictionary *dict) {
+//            GWLog(@"测试最后------- %@",dict);
+//        }];
+//    }
+    
     [self curWeather];
     [self forcastSixHour];
     [self forecastDayliy];
@@ -371,8 +408,8 @@
                       fail:^(id errorMsg) {
                           [weakSelf completeCacu];
         }
-                      lon:[[NSUserDefaults standardUserDefaults] objectForKey:LONGITU]
-                      lat:[[NSUserDefaults standardUserDefaults] objectForKey:LATITU]];
+                      lon:[NSUSER_DEFUALT objectForKey:LONGITU]
+                      lat:[NSUSER_DEFUALT objectForKey:LATITU]];
 }
 
 - (void)completeCacu

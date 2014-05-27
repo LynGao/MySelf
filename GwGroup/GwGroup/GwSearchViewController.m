@@ -29,6 +29,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.navigationItem.title = @"search";
+    
     [_searchBar setDelegate:self];
     [self createCityList];
 

@@ -19,10 +19,12 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-//    [[NSUserDefaults standardUserDefaults] setObject:@"shenzhen" forKey:CURPLACE];
+    [[NSUserDefaults standardUserDefaults] setObject:@"shenzhen" forKey:CURPLACE];
     
-    [[GwLocationManager shareLocationManger] setDelegate:self];
-    [[GwLocationManager shareLocationManger] startLocation];
+    if ([NSUSER_DEFUALT objectForKey:CURPLACE] == nil) {
+        [[GwLocationManager shareLocationManger] setDelegate:self];
+        [[GwLocationManager shareLocationManger] startLocation];
+    }
 
     NSString *nibName = @"GwRootViewController";
     if (iPhone5) {
@@ -34,6 +36,7 @@
     
     [self.revealController setDirectionsToShowBounce:PPRevealSideDirectionNone];
     [self.revealController setPanInteractionsWhenClosed:PPRevealSideInteractionContentView | PPRevealSideInteractionNavigationBar];
+    
     self.window.rootViewController = self.revealController;
     
     self.window.backgroundColor = [UIColor whiteColor];

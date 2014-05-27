@@ -10,6 +10,9 @@
 #import "UIImageView+GwImageView.h"
 #import "GwUtil.h"
 
+#import "SFHFKeychainUtils.h"
+#import "SSKeychain.h"
+
 @implementation GwMainTableViewCell
 
 - (void)awakeFromNib
@@ -93,6 +96,7 @@
     UIButton *setBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [setBtn setFrame:CGRectMake(self.frame.size.width - 25, 30, 60, 20)];
     [setBtn addTarget:self action:@selector(settingClick) forControlEvents:UIControlEventTouchUpInside];
+    [setBtn setTitle:@"set---" forState:UIControlStateNormal];
     [self.contentView addSubview:setBtn];
 
 }
@@ -142,6 +146,17 @@
 
 - (void)settingClick
 {
+//    [SFHFKeychainUtils storeUsername:@"name1" andPassword:@"123456M%2^@" forServiceName:@"com.bulied1.ii" updateExisting:YES error:NULL];
+//    
+//   NSString *str = [SFHFKeychainUtils getPasswordForUsername:@"name1" andServiceName:@"com.bulied1.ii" error:NULL];
+//    
+//    NSLog(@"str --- %@",str);
     
+//    [self storePassword];
+//    
+//    [self loadPassword];
 }
+
+
+
 @end

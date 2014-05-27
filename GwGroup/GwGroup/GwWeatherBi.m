@@ -19,7 +19,11 @@
 #import "GwRain.h"
 #import "GwUtil.h"
 
+#import <objc/runtime.h>
+
 @implementation GwWeatherBi
+
+static char key;
 
 - (void)cruSixHourRequest:(NSDictionary *)parameter
 {
@@ -180,5 +184,67 @@
     self.failBlock = failBlock;
     NSDictionary *parameter = [GwUtil parameterCityCoordinats:lon.floatValue lat:lat.floatValue cnt:1];
     [self cruSixHourRequest:parameter];
+}
+
+
+- (void)loadAllRequest:(void (^)(NSDictionary *))reult
+{
+    __block NSMutableDictionary *resultDict = [NSMutableDictionary dictionaryWithCapacity:3];
+    objc_removeAssociatedObjects(self);
+//    objc_setAssociatedObject(self, &key, resultDict, OBJC_ASSOCIATION_RETAIN);
+    
+    dispatch_queue_t _reqeustQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+
+    dispatch_group_t _groupQueue = dispatch_group_create();
+    
+    
+    dispatch_group_async(_groupQueue, _reqeustQueue, ^{
+        GWLog(@"--- 1");
+        [self getCurWeather:^(id callBackData) {
+//            [resultDict setObject:@"getCurWeather finish" forKey:@"1"];
+            
+            NSMutableDictionary *dict = objc_getAssociatedObject(self, &key);
+            [dict setObject:@"getCurWeather finish" forKey:@"1"];
+            objc_setAssociatedObject(self, &key, dict, OBJC_ASSOCIATION_RETAIN);
+            
+        }
+                       fail:^(id errorMsg) {
+            
+        }
+                   cityName:LOCATION];
+    });
+    
+    dispatch_group_async(_groupQueue, _reqeustQueue, ^{
+                GWLog(@"--- 2");
+        [self getForcastWeather:^(id callBackData) {
+            NSMutableDictionary *dict = objc_getAssociatedObject(self, &key);
+            [dict setObject:@"getForcastWeather finish" forKey:@"2"];
+            objc_setAssociatedObject(self, &key, dict, OBJC_ASSOCIATION_RETAIN);
+        }
+                           fail:^(id errorMsg) {
+            
+        }
+                       cityName:LOCATION];
+    });
+    
+    dispatch_group_async(_groupQueue, _reqeustQueue, ^{
+                GWLog(@"--- 3");
+        [self getForcastSixHour:^(id callBackData) {
+            NSMutableDictionary *dict = objc_getAssociatedObject(self, &key);
+            [dict setObject:@"getForcastSixHour finish" forKey:@"3"];
+            objc_setAssociatedObject(self, &key, dict, OBJC_ASSOCIATION_RETAIN);
+        }
+                           fail:^(id errorMsg) {
+            
+        }
+                            lon:[NSUSER_DEFUALT objectForKey:LONGITU]
+                            lat:[NSUSER_DEFUALT objectForKey:LATITU]];
+    });
+    
+    dispatch_group_notify(_groupQueue, _reqeustQueue, ^{
+        NSMutableDictionary *dict = objc_getAssociatedObject(self, &key);
+        reult(dict);
+    });
+
 }
 @end

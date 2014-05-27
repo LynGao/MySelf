@@ -97,6 +97,9 @@
 		CC4E4DF118EE875F004BD9BC /* GwTempView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4E4DF018EE875F004BD9BC /* GwTempView.m */; };
 		CC4E4DF418EEAC6F004BD9BC /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4E4DF318EEAC6F004BD9BC /* CoreText.framework */; };
 		CCAA8B2518EBFDFD0030D6E0 /* GwTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAA8B2418EBFDFD0030D6E0 /* GwTableViewDelegate.m */; };
+		CCBC805C192C92C000FE5BFF /* UIAlertView+ShowWithBlk.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBC805B192C92C000FE5BFF /* UIAlertView+ShowWithBlk.m */; };
+		CCCAA4161934726C00253733 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCAA4131934726C00253733 /* SFHFKeychainUtils.m */; };
+		CCCAA419193478DF00253733 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCAA418193478DF00253733 /* SSKeychain.m */; };
 		CCFC332718FFD86800FFE6B2 /* GwWind.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFC332618FFD86800FFE6B2 /* GwWind.m */; };
 		CCFC332A18FFD8D400FFE6B2 /* GwSys.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFC332918FFD8D400FFE6B2 /* GwSys.m */; };
 /* End PBXBuildFile section */
@@ -386,6 +389,12 @@
 		CC4E4DF318EEAC6F004BD9BC /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		CCAA8B2318EBFDFD0030D6E0 /* GwTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwTableViewDelegate.h; sourceTree = "<group>"; };
 		CCAA8B2418EBFDFD0030D6E0 /* GwTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwTableViewDelegate.m; sourceTree = "<group>"; };
+		CCBC805A192C92C000FE5BFF /* UIAlertView+ShowWithBlk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+ShowWithBlk.h"; sourceTree = "<group>"; };
+		CCBC805B192C92C000FE5BFF /* UIAlertView+ShowWithBlk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+ShowWithBlk.m"; sourceTree = "<group>"; };
+		CCCAA4121934726C00253733 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
+		CCCAA4131934726C00253733 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
+		CCCAA417193478DF00253733 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		CCCAA418193478DF00253733 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 		CCFC332518FFD86800FFE6B2 /* GwWind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwWind.h; sourceTree = "<group>"; };
 		CCFC332618FFD86800FFE6B2 /* GwWind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GwWind.m; sourceTree = "<group>"; };
 		CCFC332818FFD8D400FFE6B2 /* GwSys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GwSys.h; sourceTree = "<group>"; };
@@ -471,7 +480,6 @@
 		CC0D365818838A02007798CC /* GwGroup */ = {
 			isa = PBXGroup;
 			children = (
-				CC16F3A5191B72D7008A01F5 /* LeftController */,
 				CC16F3A2191B71DC008A01F5 /* PPRevealSideViewController.h */,
 				CC16F3A3191B71DC008A01F5 /* PPRevealSideViewController.m */,
 				CC0D366118838A02007798CC /* GwAppDelegate.h */,
@@ -482,6 +490,7 @@
 				CC21CE681918BA980044F51A /* GwRootViewController_5.xib */,
 				CC0D368118838A5C007798CC /* GwBaseViewController.h */,
 				CC0D368218838A5C007798CC /* GwBaseViewController.m */,
+				CC16F3A5191B72D7008A01F5 /* LeftController */,
 				CC1A4DDF1901296300F3A07D /* Views */,
 				CC4A3BD618F528870044DC77 /* Category */,
 				CC4A3BD518F520740044DC77 /* Constant */,
@@ -533,6 +542,9 @@
 		CC0D368418838B14007798CC /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				CCCAA417193478DF00253733 /* SSKeychain.h */,
+				CCCAA418193478DF00253733 /* SSKeychain.m */,
+				CCCAA40F1934726C00253733 /* SFHFKeychainUtils */,
 				CC4D32D6190664D300ADB8AB /* GwCacheImage */,
 				CC20679618F3F244009E25E0 /* Jastor */,
 				CC46ECC218ED0715008DA113 /* Gansi */,
@@ -634,10 +646,10 @@
 		CC1A4DDF1901296300F3A07D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CC21CE6B1918BFD00044F51A /* Daily */,
-				CC3B34D81917942F00B2B8BB /* ForcastSix */,
 				CC13852218EBB0F400A9FEFB /* GwStateImage.h */,
 				CC13852318EBB0F400A9FEFB /* GwStateImage.m */,
+				CC21CE6B1918BFD00044F51A /* Daily */,
+				CC3B34D81917942F00B2B8BB /* ForcastSix */,
 				CC46ECC918ED40D3008DA113 /* MainCell */,
 				CC4E4DE818EE8681004BD9BC /* TempView */,
 			);
@@ -991,6 +1003,8 @@
 			children = (
 				CC0D36B618838D91007798CC /* UIViewController+Adapter.h */,
 				CC0D36B718838D91007798CC /* UIViewController+Adapter.m */,
+				CCBC805A192C92C000FE5BFF /* UIAlertView+ShowWithBlk.h */,
+				CCBC805B192C92C000FE5BFF /* UIAlertView+ShowWithBlk.m */,
 			);
 			name = Category;
 			path = ..;
@@ -1048,6 +1062,15 @@
 				CC4E4DF018EE875F004BD9BC /* GwTempView.m */,
 			);
 			name = TempView;
+			sourceTree = "<group>";
+		};
+		CCCAA40F1934726C00253733 /* SFHFKeychainUtils */ = {
+			isa = PBXGroup;
+			children = (
+				CCCAA4121934726C00253733 /* SFHFKeychainUtils.h */,
+				CCCAA4131934726C00253733 /* SFHFKeychainUtils.m */,
+			);
+			path = SFHFKeychainUtils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1171,6 +1194,7 @@
 				CC0D369A18838B14007798CC /* AFHTTPRequestOperationManager.m in Sources */,
 				CC4D32F2190664D300ADB8AB /* UIImageView+GwImageView.m in Sources */,
 				CC0D369C18838B14007798CC /* AFNetworkReachabilityManager.m in Sources */,
+				CCBC805C192C92C000FE5BFF /* UIAlertView+ShowWithBlk.m in Sources */,
 				CC3B34DC1917945800B2B8BB /* GwSixTableViewCell.m in Sources */,
 				CC46ECCD18ED4323008DA113 /* GwRootViewController.m in Sources */,
 				CC0D36A018838B14007798CC /* AFURLResponseSerialization.m in Sources */,
@@ -1193,9 +1217,11 @@
 				CC3D218D188FC50600BE1667 /* GwCityOp.m in Sources */,
 				CC1A4DCE1900FE1600F3A07D /* GwCurWeatherItem.m in Sources */,
 				CC4A3BD418F4E3920044DC77 /* GwBaseBi.m in Sources */,
+				CCCAA419193478DF00253733 /* SSKeychain.m in Sources */,
 				CC0D369B18838B14007798CC /* AFHTTPSessionManager.m in Sources */,
 				CC4D32EF190664D300ADB8AB /* GwImageManager.m in Sources */,
 				CC1A4DDE19011D9F00F3A07D /* GwLocationManager.m in Sources */,
+				CCCAA4161934726C00253733 /* SFHFKeychainUtils.m in Sources */,
 				CC4A3BDA18F532560044DC77 /* GwWeather.m in Sources */,
 				CC0D369F18838B14007798CC /* AFURLRequestSerialization.m in Sources */,
 				CC20679D18F3F244009E25E0 /* JastorRuntimeHelper.m in Sources */,
@@ -1332,9 +1358,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LIBRARY = "libc++";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: reven wu (KANKTAN2CL)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GwGroup/GwGroup-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"${SOURCE_ROOT}/ThirdPart/pop-master/pop/",
+				);
 				INFOPLIST_FILE = "GwGroup/GwGroup-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -1353,9 +1385,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LIBRARY = "libc++";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: iSoftStone Information Technology Co.,Ltd";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GwGroup/GwGroup-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"${SOURCE_ROOT}/ThirdPart/pop-master/pop/",
+				);
 				INFOPLIST_FILE = "GwGroup/GwGroup-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (

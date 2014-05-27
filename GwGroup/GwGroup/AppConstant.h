@@ -41,8 +41,9 @@
 
 #define SYSTEMOSVERSION [[[UIDevice currentDevice] systemVersion] floatValue]
 
-#define LOCATION [[NSUserDefaults standardUserDefaults] objectForKey:CURPLACE]
+#define NSUSER_DEFUALT [NSUserDefaults standardUserDefaults]
 
+#define LOCATION [NSUSER_DEFUALT objectForKey:CURPLACE]
 
 /**** tips *****/
 #define REQUEST_FAIL @"请求失败,请稍后再试!"
